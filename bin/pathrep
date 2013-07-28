@@ -1,0 +1,40 @@
+#!/bin/sh
+portname=${1:-`make -V PORTNAME`}
+distversion=${2:-`make -V DISTVERSION`}
+path=${3:-.}
+cd $path
+prefix=`make -V PREFIX`
+plist_sub=`make -V PLIST_SUB XAWVER=777777 OSREL=777777`
+sedtmp=`mktemp -t /tmp`
+echo "s|^$prefix/||">>$sedtmp
+echo "s|^${prefix#/}/||">>$sedtmp
+for i in $plist_sub;do
+	echo $i|\
+	sed -Ee 's/([^=]*)=(.*)/\2=\1/;s/"//g'|\
+	egrep -v '(XAWVER|LIB32DIR)'
+done|perl -we 'print sort {length $b <=> length $a} <>'|grep -v '^='|grep -v '^%D='|\
+{
+	IFS='
+'
+	while read a;do
+		echo $a|sed -Ee\
+			"/DIR\$/!s/(.*)=(.*)/s|\1|%%\2%%|g/;\
+			 /DIR\$/s/(.*)=(.*)/s#\1(\/|\$)#%%\2%%\\\1#g/"\
+				>>$sedtmp
+	done
+}
+
+for i in DOCS EXAMPLES DATA;do
+	if grep -q NOPORT${i} Makefile;then
+		echo "/%%${i}DIR%%/s|^|%%PORT${i}%%|">>$sedtmp
+	fi
+	if grep -q ^PORT${i}= Makefile;then
+		echo "/%%${i}DIR%%/d">>$sedtmp
+	fi
+done
+
+sed -i.bak -e 's|\+|\\+|g' $sedtmp
+sed -Ef $sedtmp
+#cat $sedtmp
+rm -f $sedtmp.bak
+rm -f $sedtmp

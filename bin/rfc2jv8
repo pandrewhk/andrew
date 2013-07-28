@@ -1,0 +1,6 @@
+#!/bin/sh -x
+rfcnum=$1
+fetch -q -o- http://rfc.net/rfc$rfcnum.txt|\
+unexpand -a|expand -t2|\
+perl -0pe 's/\n*.*\n\n.*\n*/\n/g;s/^   //mg'|\
+fmt -99999|unix2dos

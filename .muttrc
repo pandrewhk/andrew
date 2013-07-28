@@ -1,0 +1,137 @@
+reset all
+unhook *
+
+set alias_file=~/.mutt/aliases
+set nopipe_decode
+set noallow_8bit
+auto_view text/html
+mime_lookup application/octet-stream
+set send_charset="us-ascii:utf-8"
+unset followup_to
+unset honor_followup_to
+unset metoo
+set delete=yes
+set sig_dashes
+set smart_wrap
+set signature
+set ignore_list_reply_to
+set arrow_cursor
+set charset="utf-8"
+set assumed_charset="utf-8:iso-8859-1:cp1251"
+set copy=yes
+set fcc_attach
+set index_format="%4C %Z %{%m/%d} %-15.15F (%4c) %s"
+#set hdrs			# include `my_hdr' lines in outgoing messages
+#set header			# include message header when replying
+unset help
+set quit=ask-yes
+set include
+set locale="en_US"
+set nomark_old
+set mail_check=10
+set nomove
+set pager_index_lines=0
+set pager_stop
+set print_command=/bin/false
+set noprompt_after
+set read_inc=25
+#set noreply_to
+set shell="/usr/local/bin/zsh"
+set sort=threads
+set sort_aux=last-date-received
+set sort_browser=reverse-date
+#set strict_threads
+set tilde
+set pgp_verify_sig=yes
+set pgp_autosign=yes
+set write_inc=25
+set mail_check=600
+set sleep_time=0
+set narrow_tree
+
+set imap_authenticators="plain"
+unset imap_check_subscribed
+set imap_delim_chars="."
+unset imap_idle
+set imap_keepalive=10
+unset imap_list_subscribed
+unset imap_passive
+unset imap_peek
+
+set folder="imaps://sat@heka.cenkes.org/"
+set spoolfile="=inbox"
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set header_cache="~/.mutt/hc"
+#set maildir_header_cache_verify=no
+set message_cachedir="~/.mutt/mc"
+
+set visual=vim
+set editor=vim
+set autoedit
+set edit_headers
+#set smtp_url="smtps://sat@heka.cenkes.org:25/
+
+set sendmail="/usr/local/bin/msmtp -a di"
+#set compose_format="Heka -- Mutt: Compose [Approx. msg size: %l Atts: %a]%>-"
+set reverse_name=yes
+set reverse_alias=yes
+set reverse_realname=no
+#alternates ^infofarmer@gmail.com$ ^infofarmer@FreeBSD.org$
+#set from=infofarmer@cenkes.org
+set from=andrew@dreamindustries.ru
+set realname="Andrew Pantyukhin"
+
+#set sidebar_width=24
+#set sidebar_visible=no
+
+set folder_format="%3C %6N %f %>. %6N %35s"
+
+#color sidebar_new yellow default
+#color normal white default
+color hdrdefault red default
+color quoted brightblue default
+color signature red default
+color indicator green default
+color error brightred default
+color status yellow blue
+color tree magenta default      # the thread tree in the index menu
+color tilde magenta default
+color message brightcyan default
+color markers brightcyan default
+color attachment brightmagenta default
+color search default green      # how to hilite search patterns in the pager
+
+color header brightred default ^(From|Subject):
+color body magenta default "(ftp|http|https)://[^ ]+"   # point out URLs
+color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+    # e-mail addresses
+color underline brightgreen default
+
+my_hdr X-OS: `uname -srm`
+
+#source /usr/local/doc/mutt/samples/gpg.rc # Use GPG
+#source /usr/local/share/examples/mutt/gpg.rc
+source ~/.mutt/auto_views                 # Define auto_views.
+source ~/.mutt/aliases                    # Load in my aliases.
+source ~/.mutt/groups
+source ~/.mutt/subscriptions              # Define the list of subscribed mailing lists.
+source ~/.mutt/mailboxes                  # Define the list of folders that receive mail.
+source ~/.mutt/headers                    # Configure header display.
+source ~/.mutt/folder-hooks               # Define folder-hooks.
+source ~/.mutt/save-hooks                 # Define save-hooks.
+source ~/.mutt/fcc-hooks                  # Define fcc-hooks.
+source ~/.mutt/message-hooks              # Define message hooks.
+source ~/.mutt/bindings                   # Define key bindings.
+source ~/.mutt/macros                     # Define macros.
+source ~/.mutt/colours                    # Define colours.
+source ~/.mutt/non-standard               # Support for mutt patches.
+
+#send-hook . 'my_hdr From: Andrew Pantyukhin <infofarmer@FreeBSD.org>; my_hdr Reply-To: Andrew Pantyukhin <infofarmer@FreeBSD.org>'
+#send-hook . 'unmy_hdr From:; unmy_hdr Reply-To:'
+#send-hook =t'@gubkin.ru' 'my_hdr From: Andrew Pantyukhin <andrew@gubkin.ru>; my_hdr Reply-To: Andrew Pantyukhin <andrew@gubkin.ru>'
+
+set record="=Sent"
+set postponed="=Drafts"
+alternative_order text/enriched text/plain text/html
+push <show-version>

@@ -1,0 +1,74 @@
+*VT100.Background:	white
+*VT100*cursorColor:	red
+
+!*termName:	xterm-color
+
+*VT100.charClass: 33:48,35:48,37:48,43:48,45-47:48,126:48
+!                  !     #     %     +     -./       ~
+
+*VT100*JumpScroll:	false
+*VT100*MultiScroll:	false
+*VT100*RightScrollBar:	true
+*VT100*SaveLines:	256
+*VT100*ScrollBar:	true
+
+! What i use...
+XTerm*background:       rgb:0/0/0
+XTerm*foreground:	rgb:ee/ee/ee
+XTerm*cursorColor:	#ffdd70
+
+! different purposes, different colors, switched by the instance name
+! "..." of the Class XTerm:  'xterm -name wega'
+wega*background:	rgb:05/00/60
+lyra*background:	rgb:05/00/60
+cellar*background:	rgb:05/00/60
+ultra15*background:	black
+auspex1*background:	black
+w3m*background:		black
+
+!URxvt*font:		10x20
+!URxvt*font:		9x15
+!URxvt*termName:		rxvt-unicode
+! meta8 conflicts with Unicode and other non-ASCII charsets
+URxvt*meta8:		false
+URxvt*depth:		32
+URxvt*background:	rgba:0000/0000/0000/9999
+URxvt*color4:		rgb:00/00/e0
+URxvt*color12:		rgb:00/00/ff
+!URxvt*foreground:	Green3
+URxvt*foreground:	rgb:00/d0/00
+URxvt*fading:		25
+URxvt*scrollstyle:	plain
+URxvt*scrollBar:	false
+URxvt*internalBorder:	0
+URxvt*externalBorder:	0
+!Rxvt*borderLess:	true
+URxvt*pastableTabs:	true
+URxvt*pointerBlank:	true
+URxvt*font: xft:Liberation Mono:size=15:aspect=1.28:, \
+			xft:Kochi Mincho:, \
+			xft:Baekmuk Batang:, \
+			xft:Code2000:, \
+			xft:Code2001:
+URxvt*font:		xft:Liberation Mono:size=10.00:aspect=1.5:, \
+			xft:Kochi Mincho:aspect=1.4:, \
+			xft:UnBatang:aspect=1.4:, \
+			xft:HAN NOM B:aspect=1.4:, \
+			xft:AR PL New Sung:aspect=1.4:, \
+			xft:Code2000:aspect=1.4:, \
+			xft:Code2001:aspect=1.4:,
+!URxvt*boldFont: xft:Liberation Mono:size=19:style=Bold, \
+!			xft:Kochi Mincho:size=19,xft:style=Bold, \
+!			xft:Baekmuk Batang:size=19,xft:style=Bold, \
+!			xft:Code2000:size=19,xft:style=Bold, \
+!			xft:Code2001:size=19,xft:style=Bold
+!URxvt*italicFont: xft:Liberation Mono:size=19:style=Italic
+!URxvt*boldItalicFont: xft:Liberation Mono:size=19:style=Bold Italic
+!URxvt.font: -*-terminus-medium-r-normal--12-*-*-c-*-iso10646-1
+!URxvt.boldFont: -*-terminus-bold-r-normal--12-*-*-*-c-*-iso10646-1
+!URxvt*font:		xft:Terminus:bold:pixelsize=12
+!URxvt*boldFont:		  -xos4-terminus-bold-r-normal--12-120-72-72-c-60-iso10646-1
+!URxvt*font:		xft:Bitstream Vera Sans Mono:autohint=true
+!URxvt*boldFont:        
+!URxvt*italicFont:       xft:Bitstream Vera Sans Mono:italic:autohint=true
+!URxvt*boldItalicFont:   xft:Bitstream Vera Sans Mono:bold:italic:autohint=true

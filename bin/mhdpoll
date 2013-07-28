@@ -1,0 +1,3 @@
+#!/bin/sh
+
+while ! txt=`curl -s 'https://www.eventbrite.com/xml/event_get?id=4389747854&app_key=PAOK6PG4DF65O2BGPU' | grep quantity`; do sleep 10; done; echo $txt | mail -s 'MHD TICKET ALERT #2' andrew@di.vc,andrey.popp@zvooq.com,nikita.vasilyev@di.vc

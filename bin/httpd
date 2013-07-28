@@ -1,0 +1,27 @@
+#!/bin/sh
+IFS='
+'
+rm /tmp/req
+while read a;do
+	if [ -z `echo $a|tr -d '\r'` ]; then
+		break
+	else
+		echo "$a" >> /tmp/req
+	fi
+done
+	
+echo HTTP/1.0 200 OK
+echo Connection: close
+echo Content-Type: text/html
+echo Server: myserver123
+echo
+echo "<h1>Hello world!</h1>"
+echo "<h2>This is a test page!</h2>"
+echo "These is your request:<p/>"
+#cat /tmp/req|while read a;do
+#	echo "$a<br>"
+#done
+cat /tmp/req|sed -e 's|$|<br>|'
+echo '<tt>'
+df|sed -e 's|$|<br>|'
+echo '</tt>'

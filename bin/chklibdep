@@ -1,0 +1,14 @@
+#!/bin/sh
+ldd_depends_file=`mktemp -t lddchk`
+pkg_depends_file=`mktemp -t lddchk`
+pkgname=`make -V PKGNAME`
+prefix=`make -V PREFIX`
+pkgorigin=`make -V PKGORIGIN`
+pkg_info -L $pkgname|xargs ldd 2>&-|egrep '=>.*/usr/local'|\
+sed -Ee 's|.*(/usr/local[[:graph:]]*).*|\1|'|\
+sort -u|xargs -n1 pkg_info -W|\
+sed -Ee 's|.* ([[:graph:]]*)$|\1|'|sort -u|\
+xargs -n1 pkg_info -o|grep /|grep -xv $pkgorigin|sort -u>$ldd_depends_file
+make package-depends-list|cut -f3 -d" "|sort -u>$pkg_depends_file
+comm -23 $ldd_depends_file $pkg_depends_file
+rm -f $ldd_depends_file $pkg_depends_file

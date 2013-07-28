@@ -1,0 +1,83 @@
+#!/bin/sh
+IFS='
+'
+wrkdir="/home/sat/bin/vim-scripts"
+
+# types: color scheme, ftplugin, game, indent, syntax, utility
+
+unvba(){	# filename
+	local len flen i vba
+	vba=$1
+	len=`cat $vba|wc -l`
+	echo "Decompressing $vba ($len lines)..."
+	i=4
+	while [ $i -lt $len ];do
+		path=`tail +$i $vba|head -1|sed 's|	\[\[\[1$||;s|^/+||;s|/\.\./|/|g'`
+		flen=`tail +$(($i+1)) $vba|head -1`
+		echo "Found file $path of length $flen"
+		[ $path = ${path%/*} ]||mkdir -p ${path%/*}
+		tail +$(($i+2)) $vba|head -$flen>$path
+		i=$(($i+2+$flen))
+	done
+}
+
+if [ "$1" = "unvba" ];then
+	unvba $2
+	exit $?
+fi
+
+# Reball first
+mkdir $wrkdir/.cache
+grep -v '^#' vim-script-farmer.list|cut -f2 -d:|while read id;do
+cd $wrkdir
+	IFS=''
+	cachefile=.cache/scriptid-$id
+	[ -r $cachefile ]&&\
+	[ $((`date +%s`-`stat -f%m $cachefile`)) -le $((3600*12)) ]||\
+	fetch -qo- http://vim.sourceforge.net/scripts/script.php\?script_id=$id|\
+	egrep -A1 '(>script type<|src_id=)'>$cachefile
+	script_type=`cat $cachefile|grep -A1 '>script type<'|head -2|tail -1|\
+		sed -E 's|.*>([a-z ]+)<.*|\1|'`
+	src_id_lines=`grep src_id= $cachefile|head -2`
+	IFS='
+	'
+	echo "$src_id_lines"|while read src_id_line;do
+		src_id=`echo $src_id_line|sed -E 's|.*src_id=([0-9]*).*|\1|'`
+		filename=`echo $src_id_line|sed -E 's|.*>([^<>]{4,})<.*|\1|'`
+		destrawfile="srcid-$src_id-$filename"
+		tbzname="srcid-$src_id"
+		[ -f $destrawfile ]||fetch -qo $destrawfile "http://vim.sourceforge.net/scripts/download_script.php?src_id=$src_id"
+		echo "file: #$src_id - $filename"
+		[ -f $tbzname.tar.bz2 ]&&continue
+		rm -rf tmp
+		mkdir -p $tbzname
+		cd $tbzname/
+		case $filename in
+		*.vim)
+			mkdir $script_type
+			cp ../$destrawfile $script_type/$filename
+			;;
+		*.zip|*.tar.bz2|*.tar.gz)
+			tar xf ../$destrawfile
+			[ `ls|wc -l` -ne 1 ]||{
+				singdir=*
+				mv $singdir tmp$singdir
+				mv tmp$singdir/* ./
+				rmdir tmp$singdir; }
+			;;
+		*.vba.gz|*.vba.bz2|*.vba.zip)
+			7z e ../$destrawfile
+			unvba *vba
+			;;
+		*.vba)
+			unvba ../$destrawfile
+			;;
+		esac
+		cd ..
+		tar cjf $tbzname.tar.bz2 $tbzname
+		rm -rf $tbzname
+	done
+	echo $script_type
+	IFS='
+	'
+done

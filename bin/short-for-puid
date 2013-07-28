@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sox -V3 "$1" -n 2>&1 | grep -m1 Dura | awk '{print $3}' | \
+	egrep -q '^00:00:(0|1[012])'

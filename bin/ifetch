@@ -1,0 +1,33 @@
+#!/bin/sh
+
+file_multifetch_vars=~/.tinkershop/multifetch.vars
+
+for pdir; do
+	echo "==>> Fetching for $pdir"
+	cd /usr/ports
+	if [ -d "$pdir" ]; then
+		cd $pdir && \
+		if [ -f ./Makefile ]; then
+			origin=${PWD#${PWD%/*/*}/}
+			basdir=${PWD##*/}
+			set -- ' '
+			if [ -f $file_multifetch_vars ]; then
+				origin_match=`grep -m1 ^$origin: $file_multifetch_vars|cut -f2- -d:`
+				basdir_match=`grep -m1 ^$basdir: $file_multifetch_vars|cut -f2- -d:`
+				: ${match:=$origin_match}
+				: ${match:=$basdir_match}
+				if [ -n "$match" ]; then
+					echo "-> Matched $origin for multifetch"
+				fi
+			fi
+			: ${match:=-DWITH_DUMMY}
+			while [ -n "$match" ]; do
+				match_curr=${match##*:}
+				match_next=${match%${match_curr}}
+				match_next=${match_next%:}
+				match=$match_next
+				make do-fetch $match_curr
+			done
+		fi
+	fi
+done

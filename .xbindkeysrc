@@ -1,0 +1,142 @@
+"xbindkeys_show" 
+  control+shift + q
+
+# specify a mouse button
+"xterm"
+  control + b:2
+
+"xmap.sh ru"
+  m:0x20 + c:27
+
+"xmap.sh us"
+  m:0x20 + c:26
+
+#"xmap.sh 'jp(kana)'"
+#  m:0x20 + c:44
+
+#"xmap.sh gr"
+#  m:0x20 + c:42
+
+#"xmap.sh ar"
+#  m:0x20 + c:38
+
+"tmux selectw -t ses:1"
+  alt + 1
+
+"tmux selectw -t ses:2"
+  alt + 2
+
+"tmux selectw -t ses:3"
+  alt + 3
+
+"tmux selectw -t ses:4"
+  alt + 4
+
+"tmux selectw -t ses:5"
+  alt + 5
+
+"tmux selectw -t ses:6"
+  alt + 6
+
+"tmux selectw -t ses:7"
+  alt + 7
+
+"tmux selectw -t ses:8"
+  alt + 8
+
+"tmux selectw -t ses:9"
+  alt + 9
+
+"tmux selectw -t ses:0"
+  alt + 0
+
+"tmux selectw -t ses:11"
+  alt + shift + 1
+
+"tmux selectw -t ses:12"
+  alt + shift + 2
+
+"tmux selectw -t ses:13"
+  alt + shift + 3
+
+"tmux selectw -t ses:14"
+  alt + shift + 4
+
+"tmux selectw -t ses:15"
+  alt + shift + 5
+
+"tmux selectw -t ses:16"
+  alt + shift + 6
+
+"tmux selectw -t ses:17"
+  alt + shift + 7
+
+"tmux selectw -t ses:18"
+  alt + shift + 8
+
+"tmux selectw -t ses:19"
+  alt + shift + 9
+
+"tmux selectw -t ses:10"
+  alt + shift + 0
+
+"tmux selectw -t ses:21"
+  alt + q
+
+"tmux selectw -t ses:22"
+  alt + w
+
+"tmux selectw -t ses:23"
+  alt + e
+
+"tmux selectw -t ses:24"
+  alt + r
+
+"tmux selectw -t ses:25"
+  alt + t
+
+"tmux selectw -t ses:26"
+  alt + y
+
+"tmux selectw -t ses:27"
+  alt + u
+
+"tmux selectw -t ses:28"
+  alt + i
+
+"tmux selectw -t ses:29"
+  alt + o
+
+"tmux selectw -t ses:20"
+  alt + p
+
+"tmux selectw -t ses:31"
+  alt + shift + q
+
+"tmux selectw -t ses:32"
+  alt + shift + w
+
+"tmux selectw -t ses:33"
+  alt + shift + e
+
+"tmux selectw -t ses:34"
+  alt + shift + r
+
+"tmux selectw -t ses:35"
+  alt + shift + t
+
+"tmux selectw -t ses:36"
+  alt + shift + y
+
+"tmux selectw -t ses:37"
+  alt + shift + u
+
+"tmux selectw -t ses:38"
+  alt + shift + i
+
+"tmux selectw -t ses:39"
+  alt + shift + o
+
+"tmux selectw -t ses:30"
+  alt + shift + p
+

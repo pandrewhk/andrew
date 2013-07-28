@@ -1,0 +1,25 @@
+[status]
+	showUntrackedFiles = no
+
+[user]
+	email = infofarmer@gmail.com
+	name = Andrew Pantyukhin
+
+[color]
+	ui = auto
+
+[alias]
+	st = status -s
+	ci = commit
+	co = checkout
+	lc = log ORIG_HEAD.. --stat --no-merges
+	pu = pull --quiet
+	llog = log --date=local
+	changes=diff --name-status -r
+	diffstat=diff --stat -r
+
+[diff]
+	tool = vimdiff
+
+[merge]
+	ff = only

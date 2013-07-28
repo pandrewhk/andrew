@@ -1,0 +1,14 @@
+#!/usr/bin/perl -wT
+
+use strict;
+
+local $/;
+local $_ = <>;
+s|\<\/?html\>||g;
+s|\<META.*?\>||gs;
+s|\<head.*?head\>||gs;
+s|\<script.*?script\>||gs;
+s|\<\/?body\>||g;
+s|\<table.*\n.*\n.*prev.*\n.*\n.*next.*\n.*table\>||g;
+s|\<span class="v1".*?span\>||gs;
+print;

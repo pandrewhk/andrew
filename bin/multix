@@ -1,0 +1,5 @@
+#!/bin/sh
+xterm -r -geometry 105x27+0+0 &
+xterm -r -geometry 105x27-0+0 &
+xterm -r -geometry 105x27+0-48 &
+xterm -r -geometry 105x27-0-48 &

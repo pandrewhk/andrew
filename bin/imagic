@@ -1,0 +1,14 @@
+#!/bin/sh
+
+file_multifetch_vars=~/.tinkershop/multifetch.vars
+
+for pdir; do
+	cd /usr/ports
+	if [ -d "$pdir" ]; then
+		cd $pdir && \
+		if [ -f Makefile ]; then
+			echo -n "==>> $pdir "
+			echo "`make -V MASTER_SITE_MAGIC`"
+		fi
+	fi
+done

@@ -1,0 +1,4 @@
+#!/bin/sh
+for i in amilo tyl pollux;do
+	env DISPLAY=$i:0 xset dpms "$@"
+done

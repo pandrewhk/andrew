@@ -1,0 +1,22 @@
+#!/bin/sh
+
+errors=0
+flavor="$1"
+shift
+if [ "$flavor" = "spam" ];then
+	find "$@" -name '1*heka.cenkes.org*'|while read a;do
+		while ! bogofilter -B $a;do
+			bogofilter -s < $a
+			echo ping
+		done
+	done|grep ping|wc -l
+elif [ "$flavor" = "ham" ];then
+	find "$@" -name '1*heka.cenkes.org*'|while read a;do
+		while bogofilter -B $a -o 0.3;do
+			bogofilter -n < $a
+			echo ping
+		done
+	done|grep ping|wc -l
+else
+	echo "Wrong arg"
+fi

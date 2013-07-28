@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$1" = "r" ];then
+xdotool mousemove 1279 100;xdotool mousemove 500 500;xdotool mousemove 501 501
+fi
+if [ "$1" = "u" ];then
+xdotool mousemove 500 1;xdotool mousemove 500 500;xdotool mousemove 501 501
+fi

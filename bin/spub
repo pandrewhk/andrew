@@ -1,0 +1,17 @@
+#!/bin/sh
+echo Publishing $@...
+mirrors="bsd1.cenkes.org bsd2.cenkes.org"
+for i in $mirrors;do
+	if expr "$1" : ".*://" >&-; then
+		for u;do
+			(ssh $i "cd www/dist;wget -N -nv $u"&&echo $i-$u okay)&
+		done
+#	elif [ -d $1 ]; then
+	else
+		(rsync -avhz8 -e "ssh -x" "$@" $i:www/dist/ && echo $i okay)
+#	else
+#		(scp -r $@ $i:www/dist && echo $i okay)&
+	fi
+done
+wait
+echo

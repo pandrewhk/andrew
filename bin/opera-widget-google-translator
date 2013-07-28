@@ -1,0 +1,53 @@
+#!/bin/sh
+skipnext=false
+for arg; do
+	if $skipnext; then
+		skipnext=false
+		continue
+	fi
+case "$arg" in
+	-help|--help|-'?')
+		cat >&2 << END
+Usage: opera-widget-google-translator [options]
+
+-geometry <geometry>        set geometry of toplevel window-display <display name>     set the X display
+-visual TrueColor           use TrueColor visual on an 8-bit display
+-cmap                       tuse private color map on an 8-bit display
+-postfix <name>             append name to WM_CLASS and WM_WINDOW_ROLE
+-pd <path>                  location of alternative Opera preferences folder
+-version                    show version data
+-help                       displays command line help
+-?                          displays command line help
+END
+		exit
+		;;
+	-version|--version)
+		cat >$2 <<END
+opera-widget-google-translator
+END
+		exit
+		;;
+	-geometry|-display|-visual|-postfix|-pd|-personaldir)
+		skipnext=true
+		;;
+	-cmap)
+		;;
+	*)
+		echo "Unrecognized option: $arg" >&2
+		exit 1
+		;;
+esac
+done
+if $skipnext; then
+	echo "Missing argument to $arg" >&2
+	exit 1
+fi
+
+OPERA_BINARYDIR="/usr/local/share/opera-devel/bin/"
+
+# If present bundled Qt will be found here.
+
+LD_LIBRARY_PATH="$OPERA_BINARYDIR${LD_LIBRARY_PATH:+:}$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH
+
+exec "/usr/local/share/opera-devel/bin/opera" -sd "/usr/local/share/opera-devel" -pd "$HOME/.opera-widget-google-translator" "$@" -widget "/home/sat/.opera-widgets/usr/share/opera-widget-google-translator/config.xml"

@@ -1,0 +1,8 @@
+use integer;
+
+for (my $sector=shift) {
+    my $min=$sector/75/60;
+    my $sec=$sector/75-$min*60;
+    my $fr=$sector % 75;
+    print "$min:$sec:$fr\n";
+}

@@ -1,0 +1,4 @@
+#!/bin/sh
+echo Publishing "$@" on heka...
+scp -r "$@" heka:diffs && echo okay
+echo http://heka.cenkes.org/sat/diffs/${1##*/}

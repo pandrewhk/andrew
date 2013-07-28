@@ -1,0 +1,2 @@
+#!/bin/sh
+gzcat `man -w "$@"|cut -f1 -d" "` | groff -t -e -mandoc -Tps -P-pA4 | /usr/local/bin/lpr

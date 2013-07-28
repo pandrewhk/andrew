@@ -1,0 +1,2 @@
+for i in 1 2 3 4 5 6;do puf -lc 500 -i ~/urlf$i & sleep 1;done;while true;do rm -f /mnt/s?????;sleep 1;done
+cat bsd.port.mk|perl -000 -pe 's/\\\n//g'|perl -ne 'print if /^\s/'|perl -pe 's/^\s+//;s/[\t ]+/ /g;s/^[-@]+//'|perl -ne 'print if /then.*then/'

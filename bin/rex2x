@@ -1,0 +1,2 @@
+#!/bin/sh
+pkill x2x; x2x -north -to tyl:0 & x2x -east -to pollux:0 &

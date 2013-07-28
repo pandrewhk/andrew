@@ -1,0 +1,2 @@
+ls|nl|while read a b;do cat $b|grep '[–-]'|nl|perl -CSD -pe "s/^\s*?(\d+).*?(\S.+?)\s*?[\x{2013}\-]\s*?(\S.+?)\s*$/$a:\1:\2:\3\n/" ;done|less
+for i in playlist_*.rtf;do abiword -t txt -o ${i/.rtf/}.txt $i;done

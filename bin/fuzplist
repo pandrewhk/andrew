@@ -1,0 +1,100 @@
+#!/bin/sh
+
+port_name=`make -V PORTNAME`
+port_name=${port_name#lib}
+port_path=`realpath .`
+port_prefix=`make -V PREFIX`
+port_plistsub=`make -V PLIST_SUB`
+port_lcnames=`make -V LC_MESSAGES_NAMES`
+: ${port_lcnames:=$port_name}
+port_verbs=`make -V PORT_VERBS`
+: ${port_verbs:=$port_name}
+port_verbs="$port_verbs $@"
+port_wwwdir=`make -V WWWDIR|sed -e "s|^$port_prefix/||"`
+port_datadir=`make -V DATADIR|sed -e "s|^$port_prefix/||"`
+port_docsdir=`make -V DOCSDIR|sed -e "s|^$port_prefix/||"`
+port_examdir=`make -V EXAMPLESDIR|sed -e "s|^$port_prefix/||"`
+
+port_dirs="$port_dirs $port_datadir $port_docsdir $port_examdir $port_wwwdir"
+
+for _verb in $port_verbs; do
+	if expr $_verb : '.*\*.*/'>&-;then
+		port_dirs="$port_dirs $_verb"
+	elif expr $_verb : '.*\*'>&-;then
+		port_files="$port_files $_verb"
+	else
+		port_files="$port_files \
+			bin/*$_verb* \
+			etc/*$_verb* \
+			libdata/pkgconfig/*$_verb* \
+			libexec/*$_verb* \
+			sbin/*$_verb* \
+		"
+		port_dirs="$port_dirs \
+			include/*$_verb* \
+			lib/*$_verb* \
+			lib/ruby/site_ruby/*/*$_verb* \
+			lib/perl5/site_perl/5*/*$_verb* \
+			lib/perl5/site_perl/5*/*/*$_verb* \
+			lib/perl5/site_perl/5*/mach/auto/*$_verb* \
+			lib/perl5/site_perl/5*/mach/auto/*/*$_verb* \
+			lib/python*/site-packages/*$_verb* \
+			libexec/*$_verb* \
+			share/applications/*$_verb* \
+			share/gnome/*$_verb* \
+			share/gnome/pixmaps/*$_verb* \
+			share/gtk-doc/html/*$_verb* \
+			share/icons/*$_verb* \
+			share/icons/*/*/*/*$_verb* \
+			share/pixmaps/*$_verb* \
+			share/sgml/*$_verb* \
+			share/*$_verb* \
+			var/*$_verb* \
+		"
+	fi
+done
+
+for _name in $port_lcnames; do
+	port_files="$port_files share/locale/*/LC_MESSAGES/*$_name.*"
+done
+
+mtree_lcmess=`grep -B1 LC_MESS /usr/ports/Templates/BSD.local.dist | egrep -v '(LC|--)'`
+mtree_lcmess_rx=`grep -B1 LC_MESS /usr/ports/Templates/BSD.local.dist | egrep -v '(LC|--)'\
+	| tr -d '\n' |tr -s ' ' | sed -e 's/^ /(/;s/ /|/g;s/$/)/'`
+
+port_lcmess=`{ cd $port_prefix/share/locale && for _name in $port_lcnames;\
+	do find */LC_MESSAGES -name $_name.\* | sed -e 's|/[^ ]*||g';done;} |\
+	tr -s ' ' '\n'|sort -u|tr -s '\n' ' '`
+
+>&2 echo FILES "$port_files"
+>&2 echo DIRS "$port_dirs"
+>&2 echo DATADIR "$port_datadir"
+>&2 echo MTREE "$mtree_lcmess_rx"
+>&2 echo LCNAMES "$port_lcnames"
+>&2 echo LCMESS "$port_lcmess"
+
+cd $port_prefix
+
+items=`echo $port_files $port_dirs|tr ' ' '\n'|sort -u`
+
+>&2 echo ITEMS "$items"
+
+2>&- find -s $items -not -type d -not -name \*egg-info|\
+	sed -e 's|^$port_prefix/||' |\
+	pathrep $port_name 123 $port_path
+
+#ls $port_files|\
+#	sed -e 's|^$port_prefix/||' |\
+#	pathrep $port_name
+
+2>&- find -ds $items -type d |\
+	sed -e 's|^$port_prefix/||' |\
+	sed -e 's|^|@dirrm |'|\
+	pathrep $port_name 123 $port_path
+
+for _lc in $port_lcmess; do
+	if [ -n "`echo $_lc | sed -Ee \"s/$mtree_lcmess_rx//\"`" ] ; then
+		echo "@dirrmtry share/locale/$_lc/LC_MESSAGES"
+		echo "@dirrmtry share/locale/$_lc"
+	fi
+done

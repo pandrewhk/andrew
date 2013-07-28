@@ -1,0 +1,9 @@
+"2.3.1 (created: 2010/04/07 18:56:53)
+
+set guioptions=
+set runtimepath=/home/andrew/.vimperator
+set showstatuslinks=2
+set showtabline=0
+source! /home/andrew/.vimperatorrc.local
+
+" vim: set ft=vimperator:

@@ -1,0 +1,22 @@
+#!/bin/sh -e
+
+usage () {
+	echo "Usage: `basename $0` ( pull | push )"
+	exit 1
+}
+
+if [ $# != 1 ]; then usage; fi
+
+if [ $1 = "pull" ]; then
+	if [ ! -d ~/.tiddly ]; then mkdir -p ~/.tiddly/; fi 
+	scp freebsd.org:public_html/tiddly.html ~/.tiddly/tiddly.html
+fi
+
+if [ $1 = "push" ]; then
+	if [ ! -r ~/.tiddly/tiddly.html ]; then
+		echo "Nothing to push, sorry"
+		exit 2
+	fi
+	scp ~/.tiddly/tiddly.html freebsd.org:public_html/tiddly.html
+	scp ~/.tiddly/tiddly.xml freebsd.org:public_html/tiddly.xml
+fi

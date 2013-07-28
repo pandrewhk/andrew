@@ -1,0 +1,7 @@
+#!/bin/sh
+
+exec 2>&-
+while true; do rm -f /home/sat/.ssh/cvs.fbsd.cp; ssh -NM pcvs.freebsd.org; sleep 10; done &
+#while true; do rm -f /home/sat/.ssh/dh.cp; ssh -NM dh.cenkes.org; sleep 10; done &
+#while true; do rm -f /home/sat/.ssh/ffa.fbsd.cp; ssh -NM freefall.freebsd.org; sleep 10; done &
+#while true; do rm -f /home/sat/.ssh/vesta.cp; ssh -NM vesta.gubkin.ru; sleep 10; done &

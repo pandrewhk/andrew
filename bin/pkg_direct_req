@@ -1,0 +1,10 @@
+#!/bin/sh
+indirect_reqs=`pkg_info -Rx "$1"|egrep -v '(:|^$)'`
+pkg_origin=`pkg_info -ox "$1"|grep -m1 /`
+for i in $indirect_reqs;do
+	req_origin=`pkg_info -o "$i"|grep /`
+	depdirs=`cd /usr/ports/$req_origin;make -V _DEPEND_DIRS`
+	if echo $depdirs|grep -qw $pkg_origin;then
+		echo $i is a direct req
+	fi
+done

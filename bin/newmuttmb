@@ -1,0 +1,4 @@
+mb="$HOME/.mutt/mailboxes"
+
+echo 'mailboxes =inbox' >> $mb
+ssh heka "cd Maildir;ls -A|grep '^\.'|sed 's|^\.|mailboxes =|'" >> $mb

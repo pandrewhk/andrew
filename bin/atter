@@ -1,0 +1,22 @@
+#!/bin/sh
+if [ $# -eq 0 ];then
+	echo "Usage: `basename $0` host command"
+	exit 0
+fi
+host=$1
+shift
+
+masterdir="$HOME/.ssh/attersockets"
+sockname="$host.sock"
+sockpath="$masterdir/$sockname"
+
+[ -d $masterdir ]||mkdir -p $masterdir||exit 5
+
+# Check if master exists
+if [ -S "$sockpath" ];then
+	ps xww|grep -q 'ssh -qNMS $sockpath'||daemon -cf ssh -qNMS $sockpath $host||exit 2
+else
+	daemon -cf ssh -qNMS $sockpath $host||exit 2
+fi
+
+ssh -qtS "$sockpath" "$host" "$@"

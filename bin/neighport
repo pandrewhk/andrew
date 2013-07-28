@@ -1,0 +1,7 @@
+#!/usr/local/bin/zsh
+setopt extended_glob
+setopt null_glob
+cd ~/repos/
+for a in "$@";do
+       	ls -d (#i){/usr/ports,netbsd/pkgsrc,openbsd/ports,portage}/*/*$a* (#i)netbsd/wip/*$a* 2>&-
+done

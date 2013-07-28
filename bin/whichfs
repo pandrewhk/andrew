@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ -z "$1" ];then
+	echo "Usage: $0 ... <special>"
+	exit 1
+fi
+
+
+t="$*"
+t=${t% *}
+disk=${t##* }
+
+id=`file -sk $disk`
+
+case "$id" in
+	*ext2*|*ext3*|*ext4*) echo "ext2fs"; break ;;
+	*FAT*) echo "msdosfs"; break ;;
+	*Unix*Fast*File*system*) echo "ufs"; break ;;
+	*) echo "unknown"; break ;;
+esac

@@ -1,0 +1,11 @@
+#!/bin/sh
+{ until cp -Rn /mnt/9xw0dke1 /mnt/yahz6t3x/;do sleep 15;
+  umount /mnt/9xw0dke1
+  mount -o tcp,ro 10.123.4.211:/usr/j/di1/mnt/9xw0dke1 /mnt/9xw0dke1
+done
+} &
+{ until cp -Rn /mnt/9xw0dcd7 /mnt/yahwsu0x/;do sleep 15;
+  umount /mnt/9xw0dcd7
+  mount -o tcp,ro 10.123.5.211:/usr/j/di1/mnt/9xw0dcd7 /mnt/9xw0dcd7
+done
+} &

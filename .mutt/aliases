@@ -1,0 +1,649 @@
+alias 3d Marc van Woerkom <3d@FreeBSD.org>
+alias aaron Aaron Dalton <aaron@FreeBSD.org>
+alias abc Alan Clegg <abc@FreeBSD.org>
+alias abe Vic Able <abe@FreeBSD.org>
+alias abial Andrzej Bialecki <abial@FreeBSD.org>
+alias ache Andrey Chernov <ache@FreeBSD.org>
+alias acm Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
+alias adam Adam David <adam@FreeBSD.org>
+alias adamw Adam Weinberger <adamw@FreeBSD.org>
+alias ade Ade Lovett <ade@FreeBSD.org>
+alias admin FreeBSD administrators <admin@FreeBSD.org>
+alias adrian Adrian Harold Chadd <adrian@FreeBSD.org>
+alias agc Alistair G. Crooks <agc@FreeBSD.org>
+alias agulbra Arnt Gulbrandsen <agulbra@FreeBSD.org>
+alias ahasty Amancio Hasty <ahasty@FreeBSD.org>
+alias ahze Michael Johnson <ahze@FreeBSD.org>
+alias akiyama Shunsuke Akiyama <akiyama@FreeBSD.org>
+alias alane Alan Eldridge <alane@FreeBSD.org>
+alias alc Alan Cox <alc@FreeBSD.org>
+alias ale Alex Dupre <ale@FreeBSD.org>
+alias alepulver Alejandro Pulver <alepulver@FreeBSD.org>
+alias alex Alexander Langer <alex@FreeBSD.org>
+alias alexbl Alexander Botero-Lowry <alexbl@FreeBSD.org>
+alias alfred Alfred Perlstein <alfred@FreeBSD.org>
+alias am Atul Mukker <am@FreeBSD.org>
+alias ambrisko Doug Ambrisko <ambrisko@FreeBSD.org>
+alias amorita Akio Morita <amorita@FreeBSD.org>
+alias amurai Atsushi Murai <amurai@FreeBSD.org>
+alias anders Anders Nordby <anders@FreeBSD.org>
+alias andre Andre Oppermann <andre@FreeBSD.org>
+alias andreas Andreas Klemm <andreas@FreeBSD.org>
+alias andy Andrey Zakhvatov <andy@FreeBSD.org>
+alias anholt Eric Anholt <anholt@FreeBSD.org>
+alias anray Andrey Slusar <anray@FreeBSD.org>
+alias apg Paul Antonov <apg@FreeBSD.org>
+alias araujo Marcelo Araujo <araujo@FreeBSD.org>
+alias archie Archie Cobbs <archie@FreeBSD.org>
+alias ariff Ariff Abdullah <ariff@FreeBSD.org>
+alias arr Andrew R. Reiter <arr@FreeBSD.org>
+alias arun Arun Sharma <arun@FreeBSD.org>
+alias arved Tilman Linneweh <arved@FreeBSD.org>
+alias ashp Ashley Penny <ashp@FreeBSD.org>
+alias asmodai Jeroen Ruigrok van der Werven <asmodai@FreeBSD.org>
+alias assar Assar Westerlund <assar@FreeBSD.org>
+alias attilio Attilio Rao <attilio@FreeBSD.org>
+alias avatar Tai-hwa Liang <avatar@FreeBSD.org>
+alias az Andrej Zverev <az@FreeBSD.org>
+alias babb Jim Babb <babb@FreeBSD.org>
+alias babkin Sergey Babkin <babkin@FreeBSD.org>
+alias bag Alex G. Bulushev <bag@FreeBSD.org>
+alias bakul Bakul Shah <bakul@FreeBSD.org>
+alias barner Simon Barner <barner@FreeBSD.org>
+alias bbraun Rob Braun <bbraun@FreeBSD.org>
+alias bde Bruce Evans <bde@FreeBSD.org>
+alias beech Beech Rintoul <beech@FreeBSD.org>
+alias ben Ben Smithurst <ben@FreeBSD.org>
+alias benjsc Benjamin Close <benjsc@FreeBSD.org>
+alias benno Benno Rice <benno@FreeBSD.org>
+alias billf Bill Fumerola <billf@FreeBSD.org>
+alias bkoz Benjamin Kosnik <bkoz@FreeBSD.org>
+alias blackend Marc Fonvieille <blackend@FreeBSD.org>
+alias bland Alexander Nedotsukov <bland@FreeBSD.org>
+alias bmah Bruce A. Mah <bmah@FreeBSD.org>
+alias bmilekic Bosko Milekic <bmilekic@FreeBSD.org>
+alias bms Bruce M Simpson <bms@FreeBSD.org>
+alias bounce Handles majordomo bounced mail <bounce@FreeBSD.org>
+alias bp Boris Popov <bp@FreeBSD.org>
+alias bpepa Ben Pepa <bpepa@FreeBSD.org>
+alias brandon Brandon Gillespie <brandon@FreeBSD.org>
+alias branson Branson Matheson <branson@FreeBSD.org>
+alias brd Brad Davis <brd@FreeBSD.org>
+alias brezak John Brezak <brezak@FreeBSD.org>
+alias brian Brian Somers <brian@FreeBSD.org>
+alias brooks Brooks Davis <brooks@FreeBSD.org>
+alias brueffer Christian Brueffer <brueffer@FreeBSD.org>
+alias bruno Bruno Ducrot <bruno@FreeBSD.org>
+alias bs Bernard Steiner <bs@FreeBSD.org>
+alias bsam Boris Samorodov <bsam@FreeBSD.org>
+alias bsd Brian Dean <bsd@FreeBSD.org>
+alias bsm Barry Morris <bsm@FreeBSD.org>
+alias bushman Michael Bushkov <bushman@FreeBSD.org>
+alias bvs Vitaly Bogdanov <bvs@FreeBSD.org>
+alias bz Bjoern A. Zeeb <bz@FreeBSD.org>
+alias cagey Kevin Eliuk <cagey@FreeBSD.org>
+alias carvay J. Vicente Carrasco <carvay@FreeBSD.org>
+alias cawimm Charles A. Wimmer <cawimm@FreeBSD.org>
+alias cel Chuck Lever <cel@FreeBSD.org>
+alias ceri Ceri Davies <ceri@FreeBSD.org>
+alias cg Cameron Grant <cg@FreeBSD.org>
+alias charnier Philippe Charnier <charnier@FreeBSD.org>
+alias chein Chuck Hein <chein@FreeBSD.org>
+alias chern Chern Lee <chern@FreeBSD.org>
+alias chet Chet Ramey <chet@FreeBSD.org>
+alias chinsan Chin-San Huang <chinsan@FreeBSD.org>
+alias chm Christoph Herrmann <chm@FreeBSD.org>
+alias chmr Christoph Robitschko <chmr@FreeBSD.org>
+alias chris Chris Costello <chris@FreeBSD.org>
+alias chuckr Chuck Robey <chuckr@FreeBSD.org>
+alias cjc Crist J. Clark <cjc@FreeBSD.org>
+alias cjh CHOI Junho <cjh@FreeBSD.org>
+alias cjw Cathy Wittbrodt <cjw@FreeBSD.org>
+alias clement Clement Laforet <clement@FreeBSD.org>
+alias clive Clive Tong-I Lin <clive@FreeBSD.org>
+alias clsung Cheng-Lung Sung <clsung@FreeBSD.org>
+alias cognet Olivier Houchard <cognet@FreeBSD.org>
+alias cokane Coleman Kane <cokane@FreeBSD.org>
+alias cp Chuck Paterson <cp@FreeBSD.org>
+alias cperciva Colin Percival <cperciva@FreeBSD.org>
+alias cpiazza Christopher Piazza <cpiazza@FreeBSD.org>
+alias cracauer Martin Cracauer <cracauer@FreeBSD.org>
+alias csgr Geoff Rehmet <csgr@FreeBSD.org>
+alias cshumway Christopher Shumway <cshumway@FreeBSD.org>
+alias csjp Christian S.J. Peron <csjp@FreeBSD.org>
+alias ctm FreeBSD CTM Generating Robot <ctm@FreeBSD.org>
+alias cvsup The CVSup Utility <cvsup@FreeBSD.org>
+alias cwt Chris Timmons <cwt@FreeBSD.org>
+alias cy Cy Schubert <cy@FreeBSD.org>
+alias daichi Daichi GOTO <daichi@FreeBSD.org>
+alias damien Damien Bergamini <damien@FreeBSD.org>
+alias dan Dan Moschuk <dan@FreeBSD.org>
+alias danfe Alexey Dokuchaev <danfe@FreeBSD.org>
+alias dangdb Daniel Berlin <dangdb@FreeBSD.org>
+alias danger Daniel Gerzo <danger@FreeBSD.org>
+alias danny Daniel O'Callaghan <danny@FreeBSD.org>
+alias dannyboy Daniel Harris <dannyboy@FreeBSD.org>
+alias dap Damon Anton Permezel <dap@FreeBSD.org>
+alias darrenr Darren Reed <darrenr@FreeBSD.org>
+alias das David Schultz <das@FreeBSD.org>
+alias davidc Chad David <davidc@FreeBSD.org>
+alias davidch David Christensen <davidch@FreeBSD.org>
+alias davidn David Nugent <davidn@FreeBSD.org>
+alias davidxu David Xu <davidxu@FreeBSD.org>
+alias dawes David Dawes <dawes@FreeBSD.org>
+alias db Diane Bruce <db@FreeBSD.org>
+alias dbaker Daniel Baker <dbaker@FreeBSD.org>
+alias dburr Donald Burr <dburr@FreeBSD.org>
+alias dcassard Dave Cassard <dcassard@FreeBSD.org>
+alias dcs Daniel C. Sobral <dcs@FreeBSD.org>
+alias dcvs Doc project CVS tree owner <dcvs@FreeBSD.org>
+alias dd Dima Dorfman <dd@FreeBSD.org>
+alias dds Diomidis Spinellis <dds@FreeBSD.org>
+alias deb Debbi Goodkin <deb@FreeBSD.org>
+alias dec David E.  Cross <dec@FreeBSD.org>
+alias deischen Daniel Eischen <deischen@FreeBSD.org>
+alias delphij Xin Li <delphij@FreeBSD.org>
+alias demon Dmitry Sivachenko <demon@FreeBSD.org>
+alias den Denis Peplin <den@FreeBSD.org>
+alias des Dag-Erling Smorgrav <des@FreeBSD.org>
+alias detobin Donal E.F. Tobin <detobin@FreeBSD.org>
+alias dfr Doug Rabson <dfr@FreeBSD.org>
+alias dg David Greenman <dg@FreeBSD.org>
+alias dhartmei Daniel Hartmeier <dhartmei@FreeBSD.org>
+alias dhw David Wolfskill <dhw@FreeBSD.org>
+alias dillon Matthew Dillon <dillon@apollo.backplane.net>
+alias dima Dima Ruban <dima@FreeBSD.org>
+alias dinoex Dirk Meyer <dinoex@FreeBSD.org>
+alias dirk Dirk Froemberg <dirk@FreeBSD.org>
+alias dmlb Duncan McLennan Barclay <dmlb@FreeBSD.org>
+alias doceng Doc Manager <doceng@FreeBSD.org>
+alias don Don Wilde <don@FreeBSD.org>
+alias dougb Doug Barton <dougb@FreeBSD.org>
+alias drh Dave Hanson <drh@FreeBSD.org>
+alias dryice Dryice Dong Liu <dryice@FreeBSD.org>
+alias dt Dmitrij Tejblum <dt@FreeBSD.org>
+alias dufault Peter Dufault <dufault@FreeBSD.org>
+alias dumbbell Jean-Sebastien Pedron <dumbbell@FreeBSD.org>
+alias dwcjr David W. Chapman Jr. <dwcjr@FreeBSD.org>
+alias dwhite Doug White <dwhite@FreeBSD.org>
+alias dwmalone David Malone <dwmalone@FreeBSD.org>
+alias edwin Edwin Groothuis <edwin@FreeBSD.org>
+alias ehaupt Emanuel Haupt <ehaupt@FreeBSD.org>
+alias eik Oliver Eikemeier <eik@FreeBSD.org>
+alias eivind Eivind Eklund <eivind@FreeBSD.org>
+alias ejc Eric J.Chet <ejc@FreeBSD.org>
+alias emaste Ed Maste <emaste@FreeBSD.org>
+alias emax Maksim Yevmenkin <emax@FreeBSD.org>
+alias emily Emily Boyd <emily@FreeBSD.org>
+alias emoore Eric Moore <emoore@FreeBSD.org>
+alias eric Eric Melville <eric@FreeBSD.org>
+alias erwin Erwin Lansing <erwin@FreeBSD.org>
+alias fanf Tony Finch <fanf@FreeBSD.org>
+alias farrokhi Babak Farrokhi <farrokhi@FreeBSD.org>
+alias faulkner Boyd Faulkner <faulkner@FreeBSD.org>
+alias fenner Bill Fenner <fenner@FreeBSD.org>
+alias fjoe Max Khon <fjoe@FreeBSD.org>
+alias flathill Seiichirou Hiraoka <flathill@FreeBSD.org>
+alias flz Florent Thoumie <flz@FreeBSD.org>
+alias fortin Denis Fortin <fortin@FreeBSD.org>
+alias foxfair Foxfair Hu <foxfair@FreeBSD.org>
+alias fsmp Steve Passe <fsmp@FreeBSD.org>
+alias furuta Atsushi Furuta <furuta@FreeBSD.org>
+alias gab10 Gary Browing <gab10@FreeBSD.org>
+alias gabor Gabor Kovesdan <gabor@FreeBSD.org>
+alias gad Garance A Drosehn <gad@FreeBSD.org>
+alias gallatin Andrew Gallatin <gallatin@FreeBSD.org>
+alias garga Renato Botelho <garga@FreeBSD.org>
+alias garys Gary W. Swearingen <garys@FreeBSD.org>
+alias gavin Gavin Atkinson <gavin@FreeBSD.org>
+alias gelf Alexander Geflenbain <gelf@FreeBSD.org>
+alias geppetto David Engberg <geppetto@FreeBSD.org>
+alias gerald Gerald Pfeifer <gerald@FreeBSD.org>
+alias ghelmer Guy Helmer <ghelmer@FreeBSD.org>
+alias gibbs Justin T. Gibbs <gibbs@FreeBSD.org>
+alias gioria Sebastien Gioria <gioria@FreeBSD.org>
+alias girgen Palle Girgensohn <girgen@FreeBSD.org>
+alias gj Gary Jennejohn <gj@FreeBSD.org>
+alias glebius Gleb Smirnoff <glebius@FreeBSD.org>
+alias glewis Greg Lewis <glewis@FreeBSD.org>
+alias gnn George V. Neville-Neil <gnn@FreeBSD.org>
+alias gordon Gordon Tetlow <gordon@FreeBSD.org>
+alias gpalmer Gary Palmer <gpalmer@FreeBSD.org>
+alias graichen Thomas Graichen <graichen@FreeBSD.org>
+alias green Brian Fundakowski Feldman <green@FreeBSD.org>
+alias grehan Peter Grehan <grehan@FreeBSD.org>
+alias greid George Reid <greid@FreeBSD.org>
+alias grog Greg Lehey <grog@FreeBSD.org>
+alias groudier Gerard Roudier <groudier@FreeBSD.org>
+alias gryphon Coranth Gryphon <gryphon@FreeBSD.org>
+alias gshapiro Gregory Neil Shapiro <gshapiro@FreeBSD.org>
+alias gsutter Gregory Sutter <gsutter@FreeBSD.org>
+alias guido Guido van Rooij <guido@FreeBSD.org>
+alias hanai Hiroyuki Hanai <hanai@FreeBSD.org>
+alias harti Hartmut Brandt <harti@FreeBSD.org>
+alias helbig Wolfgang Helbig <helbig@FreeBSD.org>
+alias henrik Henrik A Klagges <henrik@FreeBSD.org>
+alias hibler Mike Hibler <hibler@FreeBSD.org>
+alias hm Hellmuth Michaelis <hm@FreeBSD.org>
+alias hmp Hiten Pandya <hmp@FreeBSD.org>
+alias hoek Tim Vanderhoek <hoek@FreeBSD.org>
+alias horikawa Kazuo Horikawa <horikawa@FreeBSD.org>
+alias hosokawa Tatsumi Hosokawa <hosokawa@FreeBSD.org>
+alias hq Herve Quiroz <hq@FreeBSD.org>
+alias hrs Hiroki Sato <hrs@FreeBSD.org>
+alias hsu Jeffrey Hsu <hsu@FreeBSD.org>
+alias hvd Henrik Vestergaard Draboel <hvd@FreeBSD.org>
+alias iedowse Ian Dowse <iedowse@FreeBSD.org>
+alias ijliao Ying-Chieh Liao <ijliao@FreeBSD.org>
+alias ikob Katsushi Kobayashi <ikob@FreeBSD.org>
+alias imp Warner Losh <imp@FreeBSD.org>
+alias imura R. Imura <imura@FreeBSD.org>
+alias issei Issei Suzuki <issei@FreeBSD.org>
+alias itetcu Ion-Mihai Tetcu <itetcu@FreeBSD.org>
+alias itojun Jun-ichiro itojun Hagino <itojun@FreeBSD.org>
+alias iwasaki Mitsuru IWASAKI <iwasaki@FreeBSD.org>
+alias jake Jake Burkholder <jake@FreeBSD.org>
+alias james Jim Lowe <james@FreeBSD.org>
+alias jason Jason Andrade <jason@FreeBSD.org>
+alias jasone Jason Evans <jasone@FreeBSD.org>
+alias jayanth Jayanth Vijayaraghavan <jayanth@FreeBSD.org>
+alias jb John Birrell <jb@FreeBSD.org>
+alias jcagle John Cagle <jcagle@FreeBSD.org>
+alias jcamou Jesus R. Camou <jcamou@FreeBSD.org>
+alias jcargill Jon Cargille <jcargill@FreeBSD.org>
+alias jdc Jeremy Chatfield <jdc@FreeBSD.org>
+alias jdp John Polstra <jdp@FreeBSD.org>
+alias jedgar Chris Faulhaber <jedgar@FreeBSD.org>
+alias jeff Jeff Roberson <jeff@FreeBSD.org>
+alias jeffh Jeff Hoffman <jeffh@FreeBSD.org>
+alias jeh James Housley <jeh@FreeBSD.org>
+alias jehamby Jake Hamby <jehamby@FreeBSD.org>
+alias jennifer Jennifer Yang <jennifer@FreeBSD.org>
+alias jesper Jesper Skriver <jesper@FreeBSD.org>
+alias jesusr Jesus Rodriguez Cuesta <jesusr@FreeBSD.org>
+alias jfieber John Fieber <jfieber@FreeBSD.org>
+alias jfitz James FitzGibbon <jfitz@FreeBSD.org>
+alias jfv Jack F Vogel <jfv@FreeBSD.org>
+alias jgreco Joe Greco <jgreco@FreeBSD.org>
+alias jgrosch Josef Grosch <jgrosch@FreeBSD.org>
+alias jha John H. Aughey <jha@FreeBSD.org>
+alias jhay John Hay <jhay@FreeBSD.org>
+alias jhb John Baldwin <jhb@FreeBSD.org>
+alias jhs Julian Stacey <jhs@FreeBSD.org>
+alias jim Jim Mock <jim@FreeBSD.org>
+alias jinmei JINMEI Tatuya <jinmei@FreeBSD.org>
+alias jkb Jan Koum <jkb@FreeBSD.org>
+alias jkh Jordan K. Hubbard <jkh@FreeBSD.org>
+alias jkim Jung-uk Kim <jkim@FreeBSD.org>
+alias jkois Johann Kois <jkois@FreeBSD.org>
+alias jkoshy Joseph Koshy <jkoshy@FreeBSD.org>
+alias jlemon Jonathan Lemon <jlemon@FreeBSD.org>
+alias jlrobin James L. Robinson <jlrobin@FreeBSD.org>
+alias jls Jordan Sissel <jls@FreeBSD.org>
+alias jmacd Joshua Peck Macdonald <jmacd@FreeBSD.org>
+alias jmallett Juli Mallett <jmallett@FreeBSD.org>
+alias jmas Jose Maria Alcaide Salinas <jmas@FreeBSD.org>
+alias jmb Jonathan M. Bresler <jmb@FreeBSD.org>
+alias jmelo Jean Milanez Melo <jmelo@FreeBSD.org>
+alias jmg John-Mark Gurney <jmg@FreeBSD.org>
+alias jmz Jean-Marc Zucconi <jmz@FreeBSD.org>
+alias joe Josef Karthauser <joe@FreeBSD.org>
+alias joe Josef Lawrence Karthauser <joe@FreeBSD.org>
+alias joel Joel Dahl <joel@FreeBSD.org>
+alias joerg Joerg Wunsch <joerg@FreeBSD.org>
+alias johan Johan Karlsson <johan@FreeBSD.org>
+alias johans Johan van Selst <johans@FreeBSD.org>
+alias jon Jonathan Chen <jon@FreeBSD.org>
+alias josef Josef El-Rayes <josef@FreeBSD.org>
+alias jseger Justin Seger <jseger@FreeBSD.org>
+alias jtc J.T. Conklin <jtc@FreeBSD.org>
+alias julian Julian Elischer <julian@FreeBSD.org>
+alias jvh Johannes Helander <jvh@FreeBSD.org>
+alias jwd John W. De Boskey <jwd@FreeBSD.org>
+alias jyl Jacob Levy <jyl@FreeBSD.org>
+alias jylefort Jean-Yves Lefort <jylefort@FreeBSD.org>
+alias kan Alexander Kabaev <kan@FreeBSD.org>
+alias karl Karl Strickland <karl@FreeBSD.org>
+alias kato KATO Takenori <kato@FreeBSD.org>
+alias kbyanc Kelly Yancey <kbyanc@FreeBSD.org>
+alias keichii Michael Chin-Yuan Wu <keichii@FreeBSD.org>
+alias keith Jing-Tang Keith Jang <keith@FreeBSD.org>
+alias ken Kenneth D. Merry <ken@FreeBSD.org>
+alias kensmith Ken Smith <kensmith@FreeBSD.org>
+alias keramida Giorgos Keramidas <keramida@FreeBSD.org>
+alias kettenis Mark Kettenis <kettenis@FreeBSD.org>
+alias kevlo Kevin Lo <kevlo@FreeBSD.org>
+alias khe Karlheinz Eckmeier <khe@FreeBSD.org>
+alias kib Konstantin Belousov <kib@FreeBSD.org>
+alias kientzle Tim Kientzle <kientzle@FreeBSD.org>
+alias kiri Kiriyama Kazuhiko <kiri@FreeBSD.org>
+alias kishore Kishore Sampathkumar <kishore@FreeBSD.org>
+alias kjc Kenjiro Cho <kjc@FreeBSD.org>
+alias kl Karl Lehenbauer <kl@FreeBSD.org>
+alias kmacy Kip Macy <kmacy@FreeBSD.org>
+alias knu Akinori MUSHA <knu@FreeBSD.org>
+alias koitsu Jeremy Chadwick <koitsu@FreeBSD.org>
+alias krion Kirill Ponomarew <krion@FreeBSD.org>
+alias kris Kris Kennaway <kris@FreeBSD.org>
+alias kuku Christoph P. Kukulies <kuku@FreeBSD.org>
+alias kuriyama Jun Kuriyama <kuriyama@FreeBSD.org>
+alias kwm Koop Mast <kwm@FreeBSD.org>
+alias lars Lars Fredriksen <lars@FreeBSD.org>
+alias laszlof Frank Laszlo <laszlof@FreeBSD.org>
+alias lawrance Sam Lawrance <lawrance@FreeBSD.org>
+alias lbr Lars Balker Rasmussen <lbr@FreeBSD.org>
+alias le Lukas Ertl <le@FreeBSD.org>
+alias leeym Yen-Ming Lee <leeym@FreeBSD.org>
+alias lesi Dejan Lesjak <lesi@FreeBSD.org>
+alias lev Lev A. Serebryakov <lev@FreeBSD.org>
+alias lile Larry Lile <lile@FreeBSD.org>
+alias linimon Mark Linimon <linimon@FreeBSD.org>
+alias lioux Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+alias ljo L Jonas Olsson <ljo@FreeBSD.org>
+alias ljrittle Loren James Rittle <ljrittle@FreeBSD.org>
+alias lkoeller Lars Koeller <lkoeller@FreeBSD.org>
+alias lme Lars Engels <lme@FreeBSD.org>
+alias loader Fukang Chen <loader@FreeBSD.org>
+alias lofi Michael Nottebrock <lofi@FreeBSD.org>
+alias logo Valentino Vaschetto <logo@FreeBSD.org>
+alias lord Vadim Zaliva <lord@FreeBSD.org>
+alias lth Lars Thegler <lth@FreeBSD.org>
+alias luigi Luigi Rizzo <luigi@FreeBSD.org>
+alias luoqi Luoqi Chen <luoqi@FreeBSD.org>
+alias lwhsu Li-Wen Hsu <lwhsu@FreeBSD.org>
+alias lx David Thiel <lx@FreeBSD.org>
+alias maddox Maddox <maddox@FreeBSD.org>
+alias maho Maho Nakata <maho@FreeBSD.org>
+alias majordom Mailing list manager account <majordom@FreeBSD.org>
+alias marc Marc Frajola <marc@FreeBSD.org>
+alias marcel Marcel Moolenaar <marcel@FreeBSD.org>
+alias marck Dmitry Morozovsky <marck@FreeBSD.org>
+alias marcus Joe Marcus Clarke <marcus@FreeBSD.org>
+alias marius Marius Strobl <marius@FreeBSD.org>
+alias mark Mark A. Treacy <mark@FreeBSD.org>
+alias markm Mark Robert Vaughan Murray <markm@FreeBSD.org>
+alias marko Mark Christopher Ovens <marko@FreeBSD.org>
+alias marko Mark Ovens <marko@FreeBSD.org>
+alias markp Mark Pulford <markp@FreeBSD.org>
+alias marks Mark Santcroos <marks@FreeBSD.org>
+alias markus Markus Brueffer <markus@FreeBSD.org>
+alias martin Martin Renters <martin@FreeBSD.org>
+alias mat Mathieu Arnold <mat@FreeBSD.org>
+alias matk Mathew Kanner <matk@FreeBSD.org>
+alias matteo Matteo Riondato <matteo@FreeBSD.org>
+alias matusita Makoto Matsushita <matusita@FreeBSD.org>
+alias mav Alexander Motin <mav@FreeBSD.org>
+alias max Masafumi Max NAKANE <max@FreeBSD.org>
+alias maxim Maxim Konovalov <maxim@FreeBSD.org>
+alias mb Maxim Bolotin <mb@FreeBSD.org>
+alias mbarkah Ade Barkah <mbarkah@FreeBSD.org>
+alias mbr Martin Blapp <mbr@FreeBSD.org>
+alias mch Michael Hancock <mch@FreeBSD.org>
+alias mckay Stephen McKay <mckay@FreeBSD.org>
+alias mckusick Marshall Kirk McKusick <mckusick@FreeBSD.org>
+alias mdg Marc de Groot <mdg@FreeBSD.org>
+alias mdodd Matthew N. Dodd <mdodd@FreeBSD.org>
+alias me Michael Elbel <me@FreeBSD.org>
+alias meganm Megan McCormack <meganm@FreeBSD.org>
+alias metal SUZUKI Koichi <metal@FreeBSD.org>
+alias mezz Jeremy Messenger <mezz@FreeBSD.org>
+alias mharo Michael Haro <mharo@FreeBSD.org>
+alias mheinen Martin Heinen <mheinen@FreeBSD.org>
+alias mi Mikhail Teterin <mi@FreeBSD.org>
+alias mich Michael Landin Hostbaek <mich@FreeBSD.org>
+alias mike Mike Barcroft <mike@FreeBSD.org>
+alias mikeh Michael Heffner <mikeh@FreeBSD.org>
+alias mini Jonathan Mini <mini@FreeBSD.org>
+alias mita Yoshio Mita <mita@FreeBSD.org>
+alias miwi Martin Wilke <miwi@FreeBSD.org>
+alias mjacob Matthew Jacob <mjacob@FreeBSD.org>
+alias mjo Mike O'Connor <mjo@FreeBSD.org>
+alias mks Mike Spengler <mks@FreeBSD.org>
+alias mlaier Max Laier <mlaier@FreeBSD.org>
+alias mm Martin Matuska <mm@FreeBSD.org>
+alias mnag Marcus Alves Grando <mnag@FreeBSD.org>
+alias mohans Mohan Srinivasan <mohans@FreeBSD.org>
+alias motoyuki Motoyuki Konno <motoyuki@FreeBSD.org>
+alias mp Mark Peek <mp@FreeBSD.org>
+alias mpcd Duffy Penski <mpcd@FreeBSD.org>
+alias mph Matthew Hunt <mph@FreeBSD.org>
+alias mpp Mike Pritchard <mpp@FreeBSD.org>
+alias mr Michael Reifenberger <mr@FreeBSD.org>
+alias msh Mark Hittinger <msh@FreeBSD.org>
+alias msmith Michael Smith <msmith@FreeBSD.org>
+alias mtaylor Mark J. Taylor <mtaylor@FreeBSD.org>
+alias mtm Mike Makonnen <mtm@FreeBSD.org>
+alias murray Murray Stokely <murray@FreeBSD.org>
+alias mux Maxime Henrion <mux@FreeBSD.org>
+alias mwlucas Michael Lucas <mwlucas@FreeBSD.org>
+alias n_hibma Nick Hibma <n_hibma@FreeBSD.org>
+alias naddy Christian Weisgerber <naddy@FreeBSD.org>
+alias nakai Yukihiro Nakai <nakai@FreeBSD.org>
+alias nate Nate Williams <nate@FreeBSD.org>
+alias nbm Neil Blakey-Milner <nbm@FreeBSD.org>
+alias ncvs CVS maintainer for FreeBSD 2.x <ncvs@FreeBSD.org>
+alias nectar Jacques Anthony Vidrine <nectar@FreeBSD.org>
+alias nemoliu Tong Liu <nemoliu@FreeBSD.org>
+alias netchild Alexander Leidinger <netchild@FreeBSD.org>
+alias newton Mark Newton <newton@FreeBSD.org>
+alias niels Niels Heinen <niels@FreeBSD.org>
+alias nik Nik Clayton <nik@FreeBSD.org>
+alias niklas Niklas Saers <niklas@FreeBSD.org>
+alias nivit Nicola Vitale <nivit@FreeBSD.org>
+alias njl Nate Lawson <njl@FreeBSD.org>
+alias nobutaka MANTANI Nobutaka <nobutaka@FreeBSD.org>
+alias non Noriaki Mitsunaga <non@FreeBSD.org>
+alias nork Norikatsu Shigemura <nork@FreeBSD.org>
+alias novel Roman Bogorodskiy <novel@FreeBSD.org>
+alias nox Juergen Lock <nox@FreeBSD.org>
+alias nra Nathan Ahlstrom <nra@FreeBSD.org>
+alias nrahlstr Nathan Ahlstrom <nrahlstr@FreeBSD.org>
+alias nsayer Nick Sayer <nsayer@FreeBSD.org>
+alias nsouch Nicolas Souchu <nsouch@FreeBSD.org>
+alias nyan Takahashi Yoshihiro <nyan@FreeBSD.org>
+alias obraun Oliver Braun <obraun@FreeBSD.org>
+alias obrien David E. O'Brien <obrien@FreeBSD.org>
+alias okazaki Tetsurou Okazaki <okazaki@FreeBSD.org>
+alias oleg Oleg Bulyzhin <oleg@FreeBSD.org>
+alias olgeni Jimmy Olgeni <olgeni@FreeBSD.org>
+alias oliver Oliver Lehmann <oliver@FreeBSD.org>
+alias onoe Atsushi Onoe <onoe@FreeBSD.org>
+alias orion Orion Hodson <orion@FreeBSD.org>
+alias osa Sergey A. Osokin <osa@FreeBSD.org>
+alias osyjm Jaye Mathisen <osyjm@FreeBSD.org>
+alias p4repl Perforce Server Replicator <p4repl@FreeBSD.org>
+alias pat Patrick Li <pat@FreeBSD.org>
+alias patrick Patrick Gardella <patrick@FreeBSD.org>
+alias paul Paul Richards <paul@FreeBSD.org>
+alias pav Pav Lucistnik <pav@FreeBSD.org>
+alias pb Pierre Beyssac <pb@FreeBSD.org>
+alias pcvs Ports project CVS tree owner <pcvs@FreeBSD.org>
+alias pdeuskar Prafulla Deuskar <pdeuskar@FreeBSD.org>
+alias pds Peter da Silva <pds@FreeBSD.org>
+alias peadar Peter Edwards <peadar@FreeBSD.org>
+alias perf-aud Account that allows Perforce to audit Foundation perforce instance <perf-aud@FreeBSD.org>
+alias perforce Perforce Server <perforce@FreeBSD.org>
+alias perky Hye-Shik Chang <perky@FreeBSD.org>
+alias petef Pete Fritchman <petef@FreeBSD.org>
+alias peter Peter Wemm <peter@FreeBSD.org>
+alias petzi Michael Beckmann <petzi@FreeBSD.org>
+alias phantom Alexey Zelkin <phantom@FreeBSD.org>
+alias philip Philip Paeps <philip@FreeBSD.org>
+alias phill X Desktop Contest <phill@FreeBSD.org>
+alias phk Poul-Henning Kamp <phk@FreeBSD.org>
+alias pho Peter Holm <pho@FreeBSD.org>
+alias picobsd The PicoBSD Project <picobsd@FreeBSD.org>
+alias piero Piero Serini <piero@FreeBSD.org>
+alias pirzyk Jim Pirzyk <pirzyk@FreeBSD.org>
+alias piso Paolo Pisati <piso@FreeBSD.org>
+alias pjd Pawel Jakub Dawidek <pjd@FreeBSD.org>
+alias portmgr Ports Manager <portmgr@FreeBSD.org>
+alias projcvs Projects CVS tree owner <projcvs@FreeBSD.org>
+alias proven Chris Provenzano <proven@FreeBSD.org>
+alias ps Paul Saab <ps@FreeBSD.org>
+alias qingli Qing Li <qingli@FreeBSD.org>
+alias rafan Rong-En Fan <rafan@FreeBSD.org>
+alias rees Jim Rees <rees@FreeBSD.org>
+alias reg Jeremy Lea <reg@FreeBSD.org>
+alias remko Remko Lodder <remko@FreeBSD.org>
+alias rgrimes Rodney W. Grimes <rgrimes@FreeBSD.org>
+alias rhh Randall Hopper <rhh@FreeBSD.org>
+alias ricardag Ricardo AG <ricardag@FreeBSD.org>
+alias rich Rich Murphey <rich@FreeBSD.org>
+alias rick+ Rick Weldon <rick+@FreeBSD.org>
+alias rik Roman Kurakin <rik@FreeBSD.org>
+alias rink Rink Springer <rink@FreeBSD.org>
+alias rivers Dave Rivers <rivers@FreeBSD.org>
+alias rls Robert Shady <rls@FreeBSD.org>
+alias rnordier Robert Nordier <rnordier@FreeBSD.org>
+alias roam Peter Pentchev <roam@FreeBSD.org>
+alias robert Robert Drehmel <robert@FreeBSD.org>
+alias roberto Ollivier Robert <roberto@FreeBSD.org>
+alias rodrigc Craig Rodrigues <rodrigc@FreeBSD.org>
+alias roger Roger Hardiman <roger@FreeBSD.org>
+alias root Charlie Root <root@FreeBSD.org>
+alias rpratt Randy Pratt <rpratt@FreeBSD.org>
+alias rrs Randall Stewart <rrs@FreeBSD.org>
+alias rse Ralf S. Engelschall <rse@FreeBSD.org>
+alias rsm Scott Mitchell <rsm@FreeBSD.org>
+alias ru Ruslan Ermilov <ru@FreeBSD.org>
+alias rushani Hideyuki KURASHINA <rushani@FreeBSD.org>
+alias rv Rajesh Vaidheeswarran <rv@FreeBSD.org>
+alias rvb Robert V. Baron <rvb@FreeBSD.org>
+alias rwatson Robert Watson <rwatson@FreeBSD.org>
+alias sada SADA Kenji <sada@FreeBSD.org>
+alias sah Sam Hopkins <sah@FreeBSD.org>
+alias sam Sam Leffler <sam@FreeBSD.org>
+alias sanpei MIHIRA Sanpei Yoshiro <sanpei@FreeBSD.org>
+alias sat Andrew Pantyukhin <sat@FreeBSD.org>
+alias scf Sean Farley <scf@FreeBSD.org>
+alias schweikh Jens Schweikhardt <schweikh@FreeBSD.org>
+alias scop Ville Skyttä <scop@FreeBSD.org>
+alias scottl Scott Long <scottl@FreeBSD.org>
+alias scrappy Marc G. Fournier <scrappy@FreeBSD.org>
+alias se Stefan Esser <se@FreeBSD.org>
+alias sean Sean Vickery <sean@FreeBSD.org>
+alias seanc Sean Chittenden <seanc@FreeBSD.org>
+alias sef Sean Eric Fagan <sef@FreeBSD.org>
+alias sem Sergey Matveychuk <sem@FreeBSD.org>
+alias semenu Semen Ustimenko <semenu@FreeBSD.org>
+alias sephe Sepherosa Ziehau <sephe@FreeBSD.org>
+alias sepotvin Stephane E. Potvin <sepotvin@FreeBSD.org>
+alias serge Serge V.Vakulenko <serge@FreeBSD.org>
+alias sergei Sergei Kolobov <sergei@FreeBSD.org>
+alias sf FUJISHIMA Satsuki <sf@FreeBSD.org>
+alias shafeeq Shafeeq Sinnamohideen <shafeeq@FreeBSD.org>
+alias shaun Shaun Amott <shaun@FreeBSD.org>
+alias sheldonh Sheldon Hearn <sheldonh@FreeBSD.org>
+alias shiba Takeshi Shibagaki <shiba@FreeBSD.org>
+alias shige Shigeyuki Fukushima <shige@FreeBSD.org>
+alias shin Yoshinobu Inoue <shin@FreeBSD.org>
+alias silby Mike Silbersack <silby@FreeBSD.org>
+alias simokawa Hidetoshi Shimokawa <simokawa@FreeBSD.org>
+alias simon Simon L. Nielsen <simon@FreeBSD.org>
+alias skv Sergey Skvortsov <skv@FreeBSD.org>
+alias smace Scott Mace <smace@FreeBSD.org>
+alias smkelly Sean Kelly <smkelly@FreeBSD.org>
+alias smpatel Sujal Patel <smpatel@FreeBSD.org>
+alias sobomax Maxim Sobolev <sobomax@FreeBSD.org>
+alias sos Søren Schmidt <sos@FreeBSD.org>
+alias spaz John Utz <spaz@FreeBSD.org>
+alias sproven Simon Proven <sproven@FreeBSD.org>
+alias ssouhlal Suleiman Souhlal <ssouhlal@FreeBSD.org>
+alias stark Gene Stark <stark@FreeBSD.org>
+alias stas Stanislav Sedov <stas@FreeBSD.org>
+alias stb Stefan Bethke <stb@FreeBSD.org>
+alias stefan Stefan Walter <stefan@FreeBSD.org>
+alias stefanf Stefan Farfeleder <stefanf@FreeBSD.org>
+alias stephane Stephane Legrand <stephane@FreeBSD.org>
+alias steve Steve Price <steve@FreeBSD.org>
+alias sue Sue Blake <sue@FreeBSD.org>
+alias sumikawa Munechika Sumikawa <sumikawa@FreeBSD.org>
+alias suz SUZUKI Shinsuke <suz@FreeBSD.org>
+alias swallace Steven Wallace <swallace@FreeBSD.org>
+alias syrinx Shteryana Shopova <syrinx@FreeBSD.org>
+alias tabthorpe Thomas Abthorpe <tabthorpe@FreeBSD.org>
+alias tackerman Tony Ackerman <tackerman@FreeBSD.org>
+alias takawata Takanori Watanabe <takawata@FreeBSD.org>
+alias tanimura Seigo Tanimura <tanimura@FreeBSD.org>
+alias taoka Satoshi Taoka <taoka@FreeBSD.org>
+alias tdb Tim Bishop <tdb@FreeBSD.org>
+alias tedm Ted Mittelstaedt <tedm@FreeBSD.org>
+alias tegge Tor Egge <tegge@FreeBSD.org>
+alias terry Terry Lambert <terry@FreeBSD.org>
+alias tg Thomas Gellekum <tg@FreeBSD.org>
+alias thepish Peter Hawkins <thepish@FreeBSD.org>
+alias thierry Thierry Thomas <thierry@FreeBSD.org>
+alias thomas Thomas Quinot <thomas@FreeBSD.org>
+alias thompsa Andrew Thompson <thompsa@FreeBSD.org>
+alias ti Ti Kan <ti@FreeBSD.org>
+alias ticso Bernd Walter <ticso@FreeBSD.org>
+alias timur Timur I. Bakeyev <timur@FreeBSD.org>
+alias tjr Tim J. Robbins <tjr@FreeBSD.org>
+alias tmclaugh Tom McLaughlin <tmclaugh@FreeBSD.org>
+alias tmm Thomas Moestl <tmm@FreeBSD.org>
+alias tobez Anton Berezin <tobez@FreeBSD.org>
+alias tom Tom Hukins <tom@FreeBSD.org>
+alias tomsoft Thomas-Henning von Kamptz <tomsoft@FreeBSD.org>
+alias torstenb Torsten Blum <torstenb@FreeBSD.org>
+alias toshi Toshihiko ARAI <toshi@FreeBSD.org>
+alias trasz Edward Tomasz Napierala <trasz@FreeBSD.org>
+alias trevor Trevor Johnson <trevor@FreeBSD.org>
+alias trhodes Tom Rhodes <trhodes@FreeBSD.org>
+alias tri Timo J. Rinne <tri@FreeBSD.org>
+alias truckman Don Lewis <truckman@FreeBSD.org>
+alias tshiozak Takuya SHIOZAKI <tshiozak@FreeBSD.org>
+alias tweten Dave Tweten <tweten@FreeBSD.org>
+alias twinterg Thomas Wintergerst <twinterg@FreeBSD.org>
+alias uch UCHIYAMA Yasushi <uch@FreeBSD.org>
+alias ue Udo Erdelhoff <ue@FreeBSD.org>
+alias uhclem Frank Durda IV <uhclem@FreeBSD.org>
+alias ulf Ulf Zimmermann <ulf@FreeBSD.org>
+alias ume Hajimu Umemoto <ume@FreeBSD.org>
+alias unfurl Bill Swingle <unfurl@FreeBSD.org>
+alias ups Stephan Uphoff <ups@FreeBSD.org>
+alias vanilla Vanilla I. Shu <vanilla@FreeBSD.org>
+alias vd Vasil Venelinov Dimov <vd@FreeBSD.org>
+alias vixie Paul Vixie <vixie@FreeBSD.org>
+alias vs Volker Stolz <vs@FreeBSD.org>
+alias vsevolod Vsevolod Stakhov <vsevolod@FreeBSD.org>
+alias wes Wes Peters <wes@FreeBSD.org>
+alias wietse Wietse Venema <wietse@FreeBSD.org>
+alias wilko Wilko Bulte <wilko@FreeBSD.org>
+alias will Will Andrews <will@FreeBSD.org>
+alias wjv Johann Visagie <wjv@FreeBSD.org>
+alias wkoszek Wojciech A. Koszek <wkoszek@FreeBSD.org>
+alias wkt Warren Toomey <wkt@FreeBSD.org>
+alias wolf Wolfgang Stanglmeier <wolf@FreeBSD.org>
+alias wollman Garrett Wollman <wollman@FreeBSD.org>
+alias wosch Wolfram Schneider <wosch@FreeBSD.org>
+alias wpaul Bill Paul <wpaul@FreeBSD.org>
+alias wsalamon Wayne Salamon <wsalamon@FreeBSD.org>
+alias wsanchez Wilfredo Sanchez Vega <wsanchez@FreeBSD.org>
+alias xride Soeren Straarup <xride@FreeBSD.org>
+alias yar Yar Tikhiy <yar@FreeBSD.org>
+alias yoichi Yoichi Nakayama <yoichi@FreeBSD.org>
+alias yokota Kazutaka YOKOTA <yokota@FreeBSD.org>
+alias yongari Pyun YongHyeon <yongari@FreeBSD.org>
+alias znerd Ernst de Haan <znerd@FreeBSD.org>
+alias nester Нестеров Роман <maylog@gmail.com>
+alias alshu Шубин Алексей <alshu@gubkin.ru>
+alias sixxs SixXS Staff <info@sixxs.net>
+alias kline Gary Kline <kline@tao.thought.org>
+alias cs Cameron Simpson <cs@zip.com.au>
+alias jura05 Jura <jura05@narod.ru>
+alias alekseev Anton Alekseev <alekseev@a2tele.com>
+alias artofvision Дмитрий Никитин <artofvision@mail.ru>
+alias mk \"Marat A. Khakimov\" <mk@gubkin.ru>
+alias spirit Anton Alekseev <blackout@blackout.ru>
+alias blackout Anton Alekseev <blackout@blackout.ru>
+alias rmacklem Rick Macklem <rmacklem@FreeBSD.org>
+alias spacefunk Alexei Ostroukhov <alexei@dreamindustries.ru>
+alias genue Eugenue Luchinin <genue.luben@gmail.com>
+alias mxl Maxim Balabin <extralarge@gmail.com>
+alias scorpix Vlad Yakovlev <red.scorpix@gmail.com>
+alias sysoev Igor Sysoev <igor@sysoev.ru>
+alias frumkin Victor Frumkin <victor@dreamindustries.ru>
+alias dunlop Simon Dunlop <sd@simondunlop.com>
+alias mironov Andrei Mironov <mironov.av@gmail.com>
+alias pavlira Irina Pavlova <pavlira07@yandex.ru>

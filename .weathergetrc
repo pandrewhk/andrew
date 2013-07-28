@@ -1,0 +1,41 @@
+#
+# ~/.weathergetrc
+#
+# NOTE: this must follow python syntax which means you cannot alter the indentions or you will experience tracebacks!
+#
+
+# current conditions
+def current():
+ print des_name+'  ('+longitude+', '+latitude+')'
+ print obs_station+'  '+last_update
+ print '  Temperature    : '+temp+' '+temp_units
+ print '  Feels Like     : '+feels_like+' '+temp_units
+ print '  Conditions     : '+cloud_type
+ print '  Wind           : '+wind_speed+' '+speed_units+', '+wind_gust+' '+speed_units+' gusts, '+wind_dir
+ print '  Visibility     : '+visibility+' '+dist_units
+ print '  Humidity       : '+humidity+' %'
+ print '  Barometer      : '+barom_psr+' '+pressure_units+', '+barom_state
+ print '  Dewpoint       : '+dewpoint+' '+temp_units
+ print '  UV             : '+uv_state+', '+uv_index
+ print '  Sunrise        : '+sunrise
+ print '  Sunset         : '+sunset
+ print '  Moon           : '+moon_state
+ print '  Time Zone      : '+time_zone+' GMT'
+ if is_storm:
+  print storm_watch
+  print storm_link
+ print ''
+
+# extended day forecast
+def extended():
+ print weekday
+ print '  High           : '+high_temp+' '+temp_units
+ print '  Low            : '+low_temp+' '+temp_units
+ print '  Conditions     : '+cloud_type
+ print '  Precipitation  : '+precipitation+' %'
+ print '  Wind           : '+wind_speed+' '+speed_units+', '+wind_gust+' '+speed_units+' gusts, '+wind_dir
+ print '  Humidity       : '+humidity+' %'
+ print '  Sunrise        : '+sunrise
+ print '  Sunset         : '+sunset
+ print ''
+ 

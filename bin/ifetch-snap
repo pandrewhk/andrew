@@ -1,0 +1,4 @@
+#!/bin/sh
+: ${mode:=$1}
+: ${mode:=fetch}
+portsnap $mode update | grep ^/usr/ports | xargs ifetch

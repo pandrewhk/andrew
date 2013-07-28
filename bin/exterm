@@ -1,0 +1,2 @@
+#!/bin/sh
+env DISPLAY=tyl:0 daemon urxvt -e screen -AxRR ses

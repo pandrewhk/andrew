@@ -1,0 +1,7 @@
+#!/usr/bin/perl -w
+
+use Unicode::CheckUTF8 qw(is_utf8);
+
+while (<>) {
+  print ($_) unless is_utf8($_);
+}

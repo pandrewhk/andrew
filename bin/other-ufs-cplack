@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cat /home/andrew/oum.`hostname -s`|grep -v '^#'|while read a b;do
+	cd $a/
+	src=`ls|/usr/games/random -l|grep -f /home/andrew/lf/partial-dates`
+	for i in $src;do
+		/usr/local/bin/rsync --size-only -r $i $b/
+#		cp -Rn $i $b/
+		sleep 1
+	done &
+done

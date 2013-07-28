@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while [ "$#" -gt 0 ];do
+	fdm -varebox -D '$rebox='"$1" fetch
+	rm -f "$1"/dovecot*
+	if [ "`find $1 -not -type d`" = "" ];then
+		find $1 -type d -delete
+	fi
+	shift
+done

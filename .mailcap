@@ -1,0 +1,5 @@
+text/html; /usr/local/bin/w3m -dump -T text/html; copiousoutput
+text/x-diff; /usr/local/bin/vim -c "set ft=diff" %s
+text/x-diff; cat %s; copiousoutput
+application/pdf; /usr/local/bin/pdftotext -layout %s -; copiousoutput
+application/msword; /usr/local/bin/antiword -ft %s; copiousoutput

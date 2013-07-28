@@ -1,0 +1,8 @@
+grindex_file="/home/sat/gr.index"
+cd /usr
+:>$grindex_file
+find -s ports -type f|while read f;do
+#	echo Adding $f
+#	echo KJSDIETQOJD:$f >> $grindex_file
+	cat $f|sed -e "s!^!$f|!" >> $grindex_file
+done

@@ -1,0 +1,13 @@
+#!/bin/sh
+{
+	egrep "$@" /usr/local/share/dict/edict-utf-8/kanji* ;
+	egrep "$@" /usr/local/share/dict/edict-utf-8/edict | grep '(P)' ;
+	echo " ********************* ======== ******************* " ;
+	egrep "$@" /usr/local/share/dict/edict-utf-8/edict | grep -v '(P)' ;
+	echo " ********************* ======== ******************* " ;
+	egrep "$@" /home/sat/j/examples-utf8 | grep A: |\
+		sed -E 's/^A: //;s/#ID.*//'|random -f- ;
+} | vim -R -
+
+
+

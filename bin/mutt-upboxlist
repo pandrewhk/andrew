@@ -1,0 +1,4 @@
+#!/bin/sh
+cd $HOME/.mutt/||exit 1
+echo 'mailboxes =inbox'>mailboxes
+ssh heka "cd Maildir;ls -dA .*|egrep -v '(nmz|^.old|\.\.?$|Trash|spam.ham)'|sed 's|^\.|mailboxes =|'">>mailboxes

@@ -1,0 +1,28 @@
+set editing-mode vi
+set completion-ignore-case on
+set expand-tilde on
+set show-all-if-ambiguous on
+set visible-stats on
+
+
+# Begin /etc/inputrc
+# Modified by Chris Lynn <roryo@roryo.dynup.net>
+
+# Allow the command prompt to wrap to the next line
+set horizontal-scroll-mode Off
+
+# Enable 8bit input
+set meta-flag On
+set input-meta On
+
+# Turns off 8th bit stripping
+set convert-meta Off
+
+# Keep the 8th bit for display
+set output-meta On
+
+# none, visible or audible
+set bell-style none
+
+Control-k: history-search-backward
+Control-j: history-search-forward

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$#" -lt 1 ];then
+	set -- `xsel -p`
+fi
+
+kanjidic='/home/sat/j/kj'
+edict='/home/sat/j/Pedict'
+{ grep "^$1" $kanjidic; echo '*********'; grep "$1" $edict; } | less

@@ -1,0 +1,308 @@
+#!/bin/sh
+
+: ${root_pid:=$$}
+: ${root_start_date:="`date '+%F-%H-%M'`"}
+: ${dist_dirs:="/usr/ports/distfiles"}
+: ${data_dir:="/home/sat/.tinkershop"}
+: ${data_dir_session:="$data_dir/$root_start_date-$root_pid"}
+: ${port_dirs:="/usr/ports"}
+: ${data_dist_dump_real:="$data_dir/dist.dump.real"}
+: ${data_dist_dump_info:="$data_dir/dist.dump.info"}
+: ${data_dist_cross_fail:="$data_dir/dist.cross.fail"}
+: ${data_dist_multifetch_vars:="$data_dir/dist.multifetch.vars"}
+: ${data_dist_fetch_fail:="$data_dir/dist.fetch.fail"}
+: ${data_general_err:="$data_dir/general.err"}
+: ${data_general_debug:="$data_dir/general.debug"}
+: ${fd_debug:="7"}
+: ${fd_err:="6"}
+: ${jobs_fetch_max:="3"}
+: ${jobs_throttle_granularity_seconds:="2"}
+: ${portsnap_mode:="fetch"}
+: ${log_portsnap_update:="$data_dir/log.portsnap.update"}
+: ${log_dist_fetch:="$data_dir/log.dist.fetch"}
+: ${log_dist_fetch_fail:="$data_dir/log.dist.fetch.fail"}
+
+exec 7>>$data_general_debug
+exec 6>>$data_general_err
+
+[ "${0##*/}" = "iportx" ] && set -o xtrace
+
+ifs () {
+	local _type_
+	_type_=${1:-"default"}
+	case $_type_ in
+		d*) IFS=' 	
+' ;;
+		l*) IFS='
+' ;;
+		s*) IFS=' ' ;;
+		t*) IFS='	' ;;
+		null) IFS="" ;;
+		:) IFS=: ;;
+	esac
+}
+
+null () { }
+
+init () {
+	mkdir -p $data_dir $data_dir_session || { echo "Failed to create work dirs" >&2; exit 5; }
+}
+
+clean_up () {
+	rm -rf $data_dir_session || { echo "Failed to remove $data_dir_session"; return 5; }
+}
+
+i_dbg () {
+	local IFS; ifs def
+	echo "`date '+=[%F %T]=>'` $*" >&7
+}
+
+i_log () {
+# log <facility> <string>
+	local IFS; ifs def
+	_facility_="$1"; shift
+	8>>`eval echo \\$log_$_facility_` echo "`date -u '+%s:'`$*" >&8
+}
+
+i_cut () {
+	local IFS -
+	ifs def; _fields_="$@"
+	ifs line; while read _line_; do
+		ifs def; set -- $_line_
+		for _field_ in $_fields_; do
+			eval echo -n \$$_field_'" "'
+		done
+		echo
+		ifs line
+	done
+}
+
+i_size () {
+	for _file_; do
+		echo "SIZE ($_file_) = `ls -ALln $_file_ | i_cut 5`"
+	done
+}
+
+i_dispsum () {
+	_types_=${1:-"i_size"}; shift
+	for _file_; do
+		for _type_ in $_types_; do
+			$_type_ $_file_
+		done
+	done
+}
+
+i_bak () {
+	for _file_; do
+		mv -f $_file_ $_file_.bak 2>&-
+	done
+}
+
+i_xargs () {
+	local IFS _line_ _cmd_ _count_ _count_ok_ _count_fail_
+	_cmd_="$1"; shift
+	_args_="$@"
+	_count_=0
+	_count_ok_=0
+	_count_fail_=0
+	i_dbg "xargs started for $_cmd_"
+	ifs line
+	while read _line_; do
+		if eval "$_cmd_" "$@" "\"$_line_\""; then
+			_count_ok_=$(( $_count_ok_ + 1 ))
+		else
+			_count_fail_=$(( $_count_fail_ + 1 ))
+		fi
+		_count_=$(( $_count_ + 1 ))
+	done
+	i_dbg "xargs finished for $_cmd_: $_count_ calls, $_count_ok_ ok, $_count_fail_ failed"
+}
+
+fdtee () {
+	local IFS _line_ _fd_
+	ifs def; i_dbg "ngtee opened for fd's $*" 
+	ifs line
+	while read _line_; do
+		for _fd_; do
+			echo $_line_ >&$_fd_
+		done
+	done
+	ifs def; i_dbg "ngtee closed for fd's $*" 
+}
+
+jobs_throttle () {
+# By number of processes for now, jobs patterns are defunct
+	local IFS _jobs_num_max_ _jobs_pattern_ _jobs_current_all_list_ _jobs_current_run_num_
+	_jobs_num_max_=${1:-"0"}
+	_jobs_pattern_="$2"
+	ifs null
+	while true; do
+		_jobs_current_all_list_=`jobs`
+		_jobs_current_run_num_=`echo "$_jobs_current_all_list_" | grep "Running" | wc -l`
+		[ "$_jobs_current_run_num_" -eq "0" ] && break
+		[ "$_jobs_current_run_num_" -lt "$_jobs_num_max_" ] && break
+		sleep $jobs_throttle_granularity_seconds
+	done
+}
+
+job_watch () {
+	local IFS; ifs def
+	_cmd_="$1"
+	_cmd_display_="${2:=${1%% *}}"
+	_cmd_fail_status_="${3:=1}"
+	i_dbg "$_cmd_display_ started"
+	if eval "$_cmd_"; then
+		i_dbg "$_cmd_display_ finished successfully"
+	else
+		i_dbg "$_cmd_display_ failed with status $?"; return $_cmd_fail_status_
+	fi
+}
+
+job_watch_make () {
+	local IFS; ifs def
+	_cmd_="$1"
+	set -- $_cmd_
+	_target_="$2"
+	: ${_origin_base_:="${PWD##*/}"}
+	: ${_make_log_:="$data_dir_session/mk.$_origin_base_.$_target_"}
+	i_dbg "make $_target_ started in $PWD"
+	if eval "$_cmd_ 2>> $_make_log_ >> $_make_log_"; then
+		i_dbg "make $_target_ succeeded in $PWD"
+	else
+		i_dbg "make $_target_ failed in $PWD with status $?"; return 1
+	fi
+}
+
+dist_dump_real_full () {
+	i_bak $data_dist_dump_real
+	_types_=${*:-"i_size"}
+	for _dist_dir_ in $dist_dirs; do
+		cd $_dist_dir_ &&\
+		find -s . -type f | cut -c3- |\
+		i_xargs i_dispsum "$_types_" >> $data_dist_dump_real
+	done
+}
+
+mpsites_dump_one () {
+	cd $1
+	make -V MASTER_SITES -V PATCH_SITES >> /tmp/mpsites.dump
+	cd $OLDPWD
+}
+
+mpsites_dump_full () {
+	i_bak /tmp/mpsites.dump
+	for _port_dir_ in $port_dirs; do
+		cd $_port_dir_ &&\
+		find [a-z]* -depth 1 -type d|\
+		i_xargs mpsites_dump_one
+	done
+}
+
+dist_dump_info_full () {
+	i_bak $data_dist_dump_info
+	for _port_dir_ in $port_dirs; do
+		cd $_port_dir_ &&\
+		find . -depth 3 -type f -name \*distinfo\* | cut -c3- |\
+		i_xargs grep -EH '^[A-Z].*\(.*\).*=' >> $data_dist_dump_info
+	done
+}
+
+plist_dump_info_full () {
+	i_bak $data_plist_dump_info
+	for _port_dir_ in $port_dirs; do
+		cd $_port_dir_ &&\
+		find . -depth 3 -type f -name \*distinfo\* | cut -c3- |\
+		i_xargs grep -EH '^[A-Z].*\(.*\).*=' >> $data_dist_dump_info
+	done
+}
+
+dist_cross_check () {
+	i_dbg "cross-checking distfiles (available vs referenced)"
+	i_bak $data_dist_cross_fail
+	_word_=${1:-"SIZE"}
+	ifs line; while read _line_; do
+		[ -z "${_line_##*$_word_*}" ] && { grep -q "${_line_#*:}" $data_dist_dump_real ||
+			echo "${_line_%/*distinfo*:*}" >> $data_dist_cross_fail; }
+	done < $data_dist_dump_info
+}
+
+shell_match () {	# pattern words
+	_pattern_="$1"
+	_words_="$2"
+}
+
+multifetch_match () {
+	local IFS
+	_arg_=$1
+	ifs line; while read _line_; do
+		ifs :; set -- $_line_
+
+		ifs line
+	done
+}
+
+dist_fetch_origin () {
+	local PACKAGE_BUILDING WITH_GPC ALL_LOCALIZED_LANGS FETCH_ALL DISABLE_VULNERABILITIES _match_ IFS
+	export PACKAGE_BUILDING WITH_GPC ALL_LOCALIZED_LANGS FETCH_ALL DISABLE_VULNERABILITIES
+	port_origin=$1
+	_null_if_abs_origin_=${port_origin##/*}
+	for _port_dir_ in "${_null_if_abs_origin_:+$port_dirs}"; do
+		i_dbg "fetching origin $port_origin in ${_port_dir_:-/}"
+		[ -d $_port_dir_ ] && cd $_port_dir_ || break
+		[ -d $port_origin ] && cd $port_origin || break
+		if [ -f ./Makefile -o -f ./BSDmakefile -o -f ./makefile ]; then
+			port_origin_real=${PWD#${PWD%/*/*}/}
+			port_origin_base=${PWD##*/}
+			if [ -f $data_dist_multifetch_vars ]; then
+				< $data_dist_multifetch_vars
+				origin_real_match=`grep -m1 ^$port_origin_real: $data_dist_multifetch_vars|cut -f2- -d:`
+				origin_base_match=`grep -m1 ^$port_origin_base: $data_dist_multifetch_vars|cut -f2- -d:`
+				: ${_match_:=$origin_real_match}
+				: ${_match_:=$origin_base_match}
+			fi
+			: ${_match_:="-D_DUMMY_DUMMY_"}
+			ifs :; set -- $_match_; ifs def
+			for _match_current_; do
+				(
+					if job_watch_make 'make do-fetch $_match_current_'; then
+						i_log dist_fetch "$port_origin:$_match_current_"
+					else
+						i_log dist_fetch_fail "$port_origin:$_match_current_"
+					fi
+				)&
+				jobs_throttle $jobs_fetch_max 'make do-fetch'
+			done
+		fi
+	done
+}
+
+dist_fetch_all () {
+	i_dbg "dist_fetch_all started in $port_dirs"
+	find -L $port_dirs -not -path \*distfiles\* -depth 3 -name Makefile -type f -exec dirname '{}' \; \
+		2>&- | i_xargs dist_fetch_origin
+}
+
+portsnap_update () {
+	job_watch 'portsnap fetch 2>&- 2>&1 >&$fd_err' 'portsnap fetch' '1'
+	job_watch 'portsnap update 2>&- 2>&1 | fdtee 1 6 | grep ^/ | i_xargs i_log portsnap_update' \
+				'portsnap update' '2'
+}
+
+dist_fetch_portsnap () {
+	cut -f2 -d: "$log_portsnap_update" | i_xargs dist_fetch_origin
+}
+
+wait_on_jobs () {
+	i_dbg "waiting for all bg jobs to complete..."
+	jobs_throttle 0
+	i_dbg "all bg jobs have completed"
+}
+
+init
+
+what_to_do=$1
+shift
+$what_to_do "$@"
+
+wait_on_jobs
+#clean_up

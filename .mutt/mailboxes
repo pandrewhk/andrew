@@ -1,0 +1,17 @@
+mailboxes =inbox
+mailboxes =Drafts
+mailboxes =Sent
+mailboxes =al.ga
+mailboxes =al.mb
+mailboxes =al.monitorus
+mailboxes =al.newrel
+mailboxes =al.vtb
+mailboxes =archive
+mailboxes =gubkin
+mailboxes =misc.corp
+mailboxes =social
+mailboxes =ml.fbsd.bot
+mailboxes =ml.fbsd.dev
+mailboxes =ml.xx
+mailboxes =spam.auto
+mailboxes =spam.real

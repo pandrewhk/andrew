@@ -1,0 +1,2 @@
+#!/bin/sh
+find -s /usr/ports/ -depth 2 -type d | xargs ifetch

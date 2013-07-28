@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+if [ $# -eq 0 ];then
+	echo "Usage: `basename $0` display command"
+	exit 0
+fi
+display="$1"
+if [ ! -z "${display##*:*}" ]; then
+	display="$display:0"
+fi
+shift
+
+exec env DISPLAY=$display "$@"

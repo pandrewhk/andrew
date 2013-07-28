@@ -1,0 +1,55 @@
+alternates -group me \
+	^support@zvooq.ru$ \
+	^infofarmer@(gmail.com|rambler.ru|yandex.ru|mail.ru|pochta.ru|gubkin.ru|sipnet.ru)$ \
+	^infofarmer@users.sourceforge.net$ \
+	^(sat|infofarmer)@cenkes.org$ \
+	^(infofarmer|sat)@FreeBSD.org(.ua)?$ \
+	^pantuhin@(specialist.ru|baumantraining.com)$ \
+	^sat@a2tele.com$ \
+	^pantyukhin.a@gubkin.ru$ \
+	^andrew@gubkin.ru$ \
+	^(andrew|infofarmer)@(zvq.me|zvooq.(ru|com)|di.vc|dreamindustries.ru)$ \
+	^truesoundinc@gmail.com$ \
+	^pantykhin.a@gubkin.ru$
+subscribe -groop myml \
+	^(freebsd-)?(gnats-submit|acpi|advocacy|amd64|announce|apache|arch|audit|binup|bluetooth|bugbusters|bugs|chat|cluster|current|cvsweb|database|doc|drivers|emulation|fs|geom|gnome|hackers|hardware|hubs|i18n|i386|ia32|ipfw|isp|jail|java|jobs|kde|mozilla|multimedia|net|openoffice|perl|policy|ports|ports-bugs|python|qa|questions|rc|security|security-notifications|sparc64|stable|testing|threads|tinderbox|usb|vendors|vuxml|www|x11|security-advisories|perforce-users|svn-src-(head|all))@FreeBSD.org$ \
+	^radvd-announce-l@litech.org$ \
+	^(debian-)?(devel|wnpp|devel-changes)@(lists.)?debian.org$ \
+	^(adzapper-everyupdate|sinfp-discuss|(xmpppy|lives)-devel|(lives|mpd|fdm|mailzu)-users|pkgsrc-wip-discuss|pkgsrc-wip-review)@lists.(sourceforge|sf).net$ \
+	^sinfp@lists.gomor.org$ \
+	^netadm@gubkin.ru$ \
+	^stfl@clifford.at$ \
+	^(lives-video)@yahoogroups.com$ \
+	^(gaupol-list)@gna.org$ \
+	^taskspooler@linuxbox.eu.org$ \
+	^catalyst@lists.rawmode.org$ \
+	^catalyst@lists.scsys.co.uk$ \
+	^(src|doc|ports|all|ru)-(committers|developers)@FreeBSD.org$ \
+	^p4-(projects|releng)@FreeBSD.org$ \
+	^kde-freebsd@(freebsd.)?kde.org$ \
+	^kde-freebsd-cvs@freebsd.kde.org$ \
+	^cvs-(src|doc|ports|projects|all)@FreeBSD.org$ \
+	^ru-cvs-(committers|all)@FreeBSD.org.ua$ \
+	^(announce|ports|misc|dev|tech|www|bugs|gnats|x11|ipv6)@(cvs.)?openbsd.org$ \
+	^(TiddlyWiki(Dev)?|Applixware|pnotify|greasemonkey-dev|vim_(use|dev|multibyte))@googlegroups.com$ \
+	^(vim|vim-dev|bugs)@vim.org$ \
+	^developers@FreeBSD.org$ \
+	^soc-mentors@FreeBSD.org$ \
+	^soc-admins@FreeBSD.org$ \
+	^screen-(users|devel)@gnu.org$ \
+	^amarok@kde.org$ \
+	^rsyslog@lists.adiscon.com$ \
+	^(tech-pkg|pkgsrc-users)@netbsd.org$ \
+	^packaging@lists.freestandards.org$ \
+	^packaging@lists.linux-foundation.org$ \
+	^xname-availability@xname.org$ \
+	^([0-9]+|submit)@bugs.debian.org$ \
+	^mutt-(users|dev|po)@mutt.org$ \
+	^wednesday-meating@rinet.ru$ \
+	^squid-users@squid-cache.org$ \
+	^wmii.*@suckless.org$ \
+	^(users|announce)@conserver.com$ \
+	^wine-announce@winehq.org$ \
+	^xlock-announce@tux.org$ \
+	^noc@zvq.me$ \
+	^xen-users@lists.xensource.com$

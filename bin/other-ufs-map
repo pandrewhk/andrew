@@ -1,0 +1,4 @@
+#!/usr/local/bin/zsh
+
+#df -t ufs|grep -v '1..%\|9[6-9]%'|grep /mnt|awk '{print $6}'|sort
+paste <(df -t ext2fs,msdosfs|grep /mnt|awk '{print $6}'|sort) <(df -t ufs|grep /mnt|sort -n -k5 -k6|awk '{print $6}')|grep '/mnt.*/mnt'

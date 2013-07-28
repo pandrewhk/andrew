@@ -1,0 +1,5 @@
+#!/bin/sh
+iconv -c -f ISO-8859-1 -t US|\
+perl -0pe 's/\A\n+//;s/\n+\Z//;s/\n*.*\n?\n?.*\n*/\n/g;s/^   //mg;s/\n{2,}/\n/'|\
+sed -e '1,/^ /s|   ||'|\
+unix2dos

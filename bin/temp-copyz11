@@ -1,0 +1,2 @@
+#!/usr/local/bin/zsh
+paste <(mount -t ext2fs|cut -f3 -d\ |sort) <(mount -t ufs|cut -f3 -d\ |sort)|grep '[[:blank:]]/mnt'|while read a b;do rsync -av $a/ $b >& ~/${a##*/}-${b##*/}.rsync & ; done

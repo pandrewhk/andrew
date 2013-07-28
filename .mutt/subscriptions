@@ -1,0 +1,7 @@
+# -*- muttrc -*-
+#
+# List of mailing lists I'm subscribed to.
+#
+
+subscribe freebsd-questions
+subscribe freebsd-net

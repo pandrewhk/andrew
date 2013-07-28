@@ -1,0 +1,25 @@
+#!/bin/sh
+
+export AUDIOSERVER=tcp/192.168.18.69:8000
+TMPFILE=`mktemp /tmp/hmplayer.XXXX` || exit 1
+allargs="$@"
+args="${allargs%%http*}"
+url="http${allargs##*http}"
+
+cd ~/temp
+fname=`md5 -s "$url" 2>&1|sed -e 's/.*= //'`.flv
+wget "$url" -c -o $TMPFILE -O $fname &
+#while ! grep '^Saving to:' $TMPFILE; do
+#	sleep 1
+#done
+#fname=`grep -m1 '^Saving to:' $TMPFILE`
+#fname=${fname#Saving to: \`}
+#fname=${fname%\'}
+
+echo "`date`::::$args::::$url::::$fname" >> /home/sat/temp/hmp.log
+
+sleep 5
+mplayer $args $fname
+kill `jobs -s`
+
+rm -f $TMPFILE

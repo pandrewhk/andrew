@@ -1,0 +1,11 @@
+macro index,pager SS "<save-message>=spam.real\ny" "Mark as spam"
+macro index,pager NS "<save-message>=spam.ham\ny" "Mark as ham"
+macro generic RL "<enter-command>source ~/.muttrc<enter>" "Reload muttrc"
+macro index,pager RR\
+	"<tag-pattern>~N\n<tag-prefix><toggle-new><untag-pattern>.\n"\
+	"Mark mailbox as read"
+macro index,pager RN\
+	"RR<next-unread-mailbox>"\
+	"Mark mailbox as read and move on"
+macro index,pager SR "<shell-escape>ssh -t heka nmzmail\n<esc>c=nmz\n" "Search via nmzmail"
+macro index,pager Y "<save-message>=archive\ny" "Archive message"

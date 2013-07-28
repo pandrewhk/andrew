@@ -1,0 +1,31 @@
+[CONTACTS]
+list_style = title,email
+user = infofarmer@gmail.com
+
+[DOCS]
+spreadsheet_format = xls
+format = txt
+spreadsheet_editor = openoffice.org
+presentation_format = ppt
+presentation_editor = openoffice.org
+document_format = txt
+
+[CALENDAR]
+list_style = title,when
+
+[GENERAL]
+regex = True
+date_print_format = %b %d %H:%M
+delete_by_default = False
+missing_field_value = N/A
+tags_prompt = False
+cap_results = False
+list_style = title,url-site
+delete_prompt = True
+user = infofarmer@gmail.com
+url_style = site
+auth_browser = /usr/local/bin/firefox3
+
+[PICASA]
+access = public
+

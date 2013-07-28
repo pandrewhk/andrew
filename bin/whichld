@@ -1,0 +1,13 @@
+#!/bin/sh
+IFS='
+'
+ldconfig -r|grep -v lib/compat/pkg|egrep -Ee "$1"|while read _line_; do
+	_libt=${_line_#*:-l}
+	lib=${_libt%% *}
+	file=/${_line_#*/}
+	_pkgt=`pkg_info -W $file`
+	pkg=${_pkgt##* }
+	origin=`pkg_info -o $pkg | grep /`
+	echo "$_line_ => $pkg"
+	echo "$lib:\${PORTSDIR}/$origin"
+done

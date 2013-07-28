@@ -1,0 +1,34 @@
+#!/usr/local/bin/perl -wT
+
+use strict;
+use Getopt::Long;
+
+my $filename;
+my $selre='.*';
+my $inplace='';
+
+GetOptions('inplace' => \$inplace, 'expr=s' => \$selre);
+
+while($filename=shift){
+	$filename=~m/^([a-zA-Z0-9\._\/-]+)$/ or die "Bad filename: $1";
+	$filename=$1;
+	open CURFILE,"<",$filename;
+	my(@lines,@tosort);
+	while(<CURFILE>){
+		if(/$selre/){push @tosort,$_}
+		else{
+			if(scalar(@tosort)){
+				push @lines,sort(@tosort);
+				@tosort=();
+			}
+			push @lines,$_
+		}
+	}
+	close CURFILE;
+	if($inplace){
+		open CURFILE,">",$filename;
+		print CURFILE @lines;
+	}else{
+		print @lines;
+	}
+}

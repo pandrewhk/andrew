@@ -1,0 +1,31 @@
+#!/bin/sh
+
+export HOSTNAME=`hostname -s`
+export SCREENRC="$HOME/.screenrc.$HOSTNAME"
+
+if [ "`uname`" != "Darwin" ];then
+SSH_STABLE_SOCK="/tmp/agent.${USER}.${HOSTNAME}.sock"
+: ${SSH_AUTH_SOCK:="$SSH_STABLE_SOCK"}
+export SSH_AUTH_SOCK
+
+pgrep -fl -U $USER ssh-agent || [ "$SSH_AUTH_SOCK" = "$SSH_STABLE_SOCK" ] || {
+	ln -sf $SSH_AUTH_SOCK $SSH_STABLE_SOCK
+	SSH_AUTH_SOCK=$SSH_STABLE_SOCK
+	export SSH_AUTH_SOCK
+}
+fi
+
+if [ -x "`which tmux`" ]&&[ "$TMUX" = "" ]&&[ "$STY" = "" ]&&[ "$TERM" != "cons25" ]&&[ "$PBS_JOBID" = "" ];then
+	tmux has -t ses || tmux new -ds ses
+	if [ -n "$SSH_TTY" ];then
+		exec tmux attach -t ses
+	else
+		exec tmux attach -t ses \; neww \; neww \; neww
+	fi
+elif [ -x "`which zsh`" ];then
+	exec zsh
+elif [ -x "`which bash`" ];then
+	exec bash
+elif [ -x "`which tcsh`" ];then
+	exec tcsh
+fi

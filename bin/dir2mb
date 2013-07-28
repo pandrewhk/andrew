@@ -1,0 +1,42 @@
+#!/usr/local/bin/perl -CSD
+
+use strict;
+use URI::Escape;
+use Encode;
+
+my $artistid = shift;
+my $releasename = shift;
+$releasename = Encode::decode_utf8($releasename);
+
+my @titles = <>;
+my @files = <*>;
+
+my $cmd = "firefox 'http://musicbrainz.org/cdi/enter.html?";
+$cmd .= "artistid=".uri_escape_utf8($artistid);
+$cmd .= "&releasename=".uri_escape_utf8($releasename);
+$cmd .= "&tracks=".scalar(@titles);
+$cmd .= "&hasmultipletrackartists=0";
+
+my $i = 0;
+
+for(@titles){
+	/^(.+?)(?::::(.+))?$/;
+	my $title = $1;
+	my $file = $files[$i];
+	my $trar = $2 if defined($2);
+	my $wavlen = `wavlen "$file"`;
+	$wavlen =~ s/.*- (?:\d\d:)?(\d\d:\d\d).\d\d(?: =)?.*/$1/;
+	chomp($wavlen);
+	$title =~ s/\d+ *[.-] *//;
+	$title =~ s/\.\w{2,4}//;
+	print "$i - $title - $wavlen\n";
+	$cmd .= "&track$i=".uri_escape_utf8($title);
+	$cmd .= "&tracklength$i=".$wavlen;
+	$cmd .= "&tr${i}_artistname=".uri_escape_utf8($trar) if defined($trar);
+	$i++;
+}
+
+$cmd .= "'";
+
+print $cmd;
+system($cmd);

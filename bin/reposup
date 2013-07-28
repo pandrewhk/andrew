@@ -1,0 +1,5 @@
+#!/bin/sh
+#csup -s /root/sup.ports
+csup -s /home/sat/sup/sup.netbsd
+csup -s /home/sat/sup/sup.openbsd
+cd /home/sat/repos && rsync -avh8 --progress rsync://rsync.gentoo.org/gentoo-portage/ portage

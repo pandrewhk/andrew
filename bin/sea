@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd /usr/local && exec /usr/X11R6/lib/linux-seamonkey/seamonkey
