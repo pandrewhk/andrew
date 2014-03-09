@@ -17,11 +17,7 @@ fi
 
 if [ -x "`which tmux`" ]&&[ "$TMUX" = "" ]&&[ "$STY" = "" ]&&[ "$TERM" != "cons25" ]&&[ "$PBS_JOBID" = "" ];then
 	tmux has -t ses || tmux new -ds ses
-	if [ -n "$SSH_TTY" ];then
-		exec tmux attach -t ses
-	else
-		exec tmux attach -t ses \; neww \; neww \; neww
-	fi
+	exec tmux attach -t ses
 elif [ -x "`which zsh`" ];then
 	exec zsh
 elif [ -x "`which bash`" ];then
