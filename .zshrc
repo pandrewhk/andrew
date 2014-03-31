@@ -112,6 +112,7 @@ export GIT_COMMITTER_EMAIL='infofarmer@gmail.com'
 export GIT_DISCOVERY_ACROSS_FILESYSTEM="YES"
 
 export PERL_UNICODE='SDLA'
+export LESSCHARSET='utf-8'
 
 [ ! -d $HOME/.virtualenvs ] || WORKON_HOME=$HOME/.virtualenvs
 [ ! -d $HOME/ve ] || WORKON_HOME=$HOME/ve
