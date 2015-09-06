@@ -29,8 +29,10 @@ function xpdf() {
   daemon -f /usr/local/bin/xpdf -rv -fullscreen "$@"
 }
 
-
-export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/ports/Tools/scripts:/usr/local/zvq/sbin:/usr/local/zvq/bin:$HOME/bin:/usr/local/libexec/rancid
+source /Users/andrew/.rvm/scripts/rvm
+export PATH=/usr/local/opt/ruby/bin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/ports/Tools/scripts:/usr/local/zvq/sbin:/usr/local/zvq/bin:$HOME/bin:/usr/local/libexec/rancid:$PATH
+export PATH=$PATH:$HOME/adt/sdk/tools:$HOME/adt/sdk/platform-tools
+export NODE_PATH=/usr/local/lib/node_modules
 if [ -d /opt/xcat ];then export PATH=$PATH:/opt/xcat/bin:/opt/xcat/sbin;fi
 if [ -d /usr/local/mpi/openmpi/bin ];then export PATH=$PATH:/usr/local/mpi/openmpi/bin;fi
 export EDITOR=vim
@@ -112,6 +114,8 @@ export GIT_COMMITTER_EMAIL='infofarmer@gmail.com'
 export GIT_DISCOVERY_ACROSS_FILESYSTEM="YES"
 
 export PERL_UNICODE='SDLA'
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 [ ! -d $HOME/.virtualenvs ] || WORKON_HOME=$HOME/.virtualenvs
 [ ! -d $HOME/ve ] || WORKON_HOME=$HOME/ve
@@ -122,3 +126,9 @@ if [ "$USER" = "zvq" -o "$USER" = "zvqbilling" ]; then
 workon $USER
 cdvirtualenv
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+. $HOME/google-cloud-sdk/path.zsh.inc
+
+[ -s "/Users/andrew/.nvm/nvm.sh" ] && . "/Users/andrew/.nvm/nvm.sh" # This loads nvm
