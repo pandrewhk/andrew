@@ -1,0 +1,17 @@
+#!/bin/sh
+
+. ~/.vimeorc
+
+args=-H 
+
+case $1 in
+	delete|put|get|post)
+		method=`echo $1 | tr '[:lower:]' '[:upper:]'`
+		shift
+		;;
+esac
+
+curl \
+	-H "Authorization: bearer $key" \
+	-X ${method:-GET} \
+	"https://api.vimeo.com/`echo $* | tr -s ' ' '/'`" | less
