@@ -26,8 +26,12 @@ set listchars=tab:>-,trail:-
 set nowrapscan
 set mouse=
 autocmd FileType twiki set expandtab
+autocmd FileType html set ts=2 sw=2 expandtab
 autocmd FileType make set ts=8 sw=8
+autocmd FileType javascript set ts=4 sw=4 expandtab
 runtime! ftplugin/man.vim
 map z; "jyl:!jdp j
 map z' "jye:!jdp j
 map z" "jyE:!jdp j
+
+execute pathogen#infect()
