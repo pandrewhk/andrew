@@ -4,13 +4,6 @@ alias la="ls -a"
 alias lf="ls -FA"
 alias ll="ls -lA"
 
-alias dcvs="env CVS_RSH=ssh cvs -d sat@dcvs.freebsd.org:/home/dcvs"
-alias pcvs="env CVS_RSH=ssh cvs -d sat@pcvs.freebsd.org:/home/pcvs"
-alias projcvs="env CVS_RSH=ssh cvs -d sat@projcvs.freebsd.org:/home/projcvs"
-alias scvs="env CVS_RSH=ssh cvs -d sat@ncvs.freebsd.org:/home/ncvs"
-alias rucvs="env CVS_RSH=ssh cvs -d sat@frdp.freebsd.org.ua:/home/rucvs"
-alias twsvn="svn --username AndrewPantyukhin"
-
 #Special
 function ssh() {
   if [ "`uname`" != "Darwin" ];then
@@ -24,32 +17,17 @@ function ssh() {
   fi
 }
 
-function xpdf() {
-#  daemon -f /usr/local/bin/xpdf -rv -cont -fullscreen "$@"
-  daemon -f /usr/local/bin/xpdf -rv -fullscreen "$@"
-}
-
-source /Users/andrew/.rvm/scripts/rvm
 export PATH=/usr/local/opt/ruby/bin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/ports/Tools/scripts:/usr/local/zvq/sbin:/usr/local/zvq/bin:$HOME/bin:/usr/local/libexec/rancid:$PATH
 export PATH=$PATH:$HOME/adt/sdk/tools:$HOME/adt/sdk/platform-tools
 export NODE_PATH=/usr/local/lib/node_modules
-if [ -d /opt/xcat ];then export PATH=$PATH:/opt/xcat/bin:/opt/xcat/sbin;fi
-if [ -d /usr/local/mpi/openmpi/bin ];then export PATH=$PATH:/usr/local/mpi/openmpi/bin;fi
 export EDITOR=vim
 export PSQL_EDITOR="vim -c 'set ft=sql'"
 export VISUAL=vim
-#export EMAIL=infofarmer@FreeBSD.org
 export EMAIL=infofarmer@gmail.com
 export MAILDIR=$HOME/Maildir
 export MAILCAPS=$HOME/.mailcap
-#export REPLYTO=infofarmer@cenkes.org
 export PAGER="less -i"
 export MAIL_AGENT="msmtp -t"
-
-#export PKGREPOSITORY=/nfs/share/FreeBSD/pkg-8-amd64/All
-#export PACKAGES=/nfs/share/FreeBSD/pkg-8-amd64
-
-[ ! -r ~/.p4acc ] || . ~/.p4acc
 
 HISTFILE=$HOME/.zshist
 HISTSIZE=20000
@@ -99,13 +77,12 @@ autoload -Uz zmv
 #compinit -C
 
 bindkey -v
-bindkey -rpM viins '^['
+#bindkey -rpM viins '^['
 bindkey -M viins '^k' history-beginning-search-backward
 bindkey -M viins '^j' history-beginning-search-forward
-stty start "^-" stop "^-"
-bindkey -M viins -s '^Q' 'su -m'
-bindkey -M viins '\e[1~'   beginning-of-line
-bindkey -M viins '\e[4~'   end-of-line
+#stty start "^-" stop "^-"
+#bindkey -M viins '\e[1~'   beginning-of-line
+#bindkey -M viins '\e[4~'   end-of-line
 
 export GIT_AUTHOR_NAME='Andrew Pantyukhin'
 export GIT_AUTHOR_EMAIL='infofarmer@gmail.com'
@@ -118,18 +95,4 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LESSCHARSET='utf-8'
 
-[ ! -d $HOME/.virtualenvs ] || WORKON_HOME=$HOME/.virtualenvs
-[ ! -d $HOME/ve ] || WORKON_HOME=$HOME/ve
-f="/usr/local/bin/virtualenvwrapper.sh"
-[ ! -r $f ] || . $f
-
-if [ "$USER" = "zvq" -o "$USER" = "zvqbilling" ]; then
-workon $USER
-cdvirtualenv
-fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-. $HOME/google-cloud-sdk/path.zsh.inc
-
-[ -s "/Users/andrew/.nvm/nvm.sh" ] && . "/Users/andrew/.nvm/nvm.sh" # This loads nvm
+export HOMEBREW_GITHUB_API_TOKEN='ff7561c61c89d97d000292e36c9e7765275190b8'
