@@ -18,6 +18,8 @@ fi
 if [ -x "`which tmux`" ]&&[ "$TMUX" = "" ]&&[ "$STY" = "" ]&&[ "$TERM" != "cons25" ]&&[ "$PBS_JOBID" = "" ];then
 	tmux has -t ses || tmux new -ds ses
 	exec tmux attach -t ses
+elif [ -x "`which reattach-to-user-namespace`" ];then
+	exec reattach-to-user-namespace -l zsh
 elif [ -x "`which zsh`" ];then
 	exec zsh
 elif [ -x "`which bash`" ];then
