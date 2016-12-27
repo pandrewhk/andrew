@@ -1,0 +1,5 @@
+#!/bin/sh
+
+iconv -f cp1251|\
+tr ',' '.'|\
+perl -nE '/^(?<acc>[^;]*);(?<accno>\d*);(?<trcur>[A-Z]{3});(?<trdate>[\d.]{8});(?<ref>[^;]*);(?<cardno>[\d\+]*(?<cardlast4>\d{4}))\s*(?<trstring>\S.*?\S)\s*(?<sysdate>[\d.]{8})\s*(?<posdate>[\d.]{8})\s*(?<posamount>[\d,.]+)\s*(?<poscur>[A-Z]{3})\s*(?:[(]Apple Pay-\d{4}[)])?\s*(?:MCC(?<mcc>\d{4}))?;(?<inc>[\d,.]*);(?<dec>[\d,.]*);/ || next;$res=$+{inc}-$+{dec};$sign = ($res < 0) ? "-" : "";say "$+{posdate}\t$+{sysdate}\t*$+{cardlast4}\tOK\t$sign$+{posamount}\t$+{poscur}\t$res\t$+{trcur}\tMCC\t$+{mcc}\t$+{trstring}"'
