@@ -96,3 +96,9 @@ export LANG=en_US.UTF-8
 export LESSCHARSET='utf-8'
 
 export HOMEBREW_GITHUB_API_TOKEN='ff7561c61c89d97d000292e36c9e7765275190b8'
+
+if [ -d $HOME/.zsh.d ]; then
+	for file in $HOME/.zsh.d/{.[a-zA-Z0-9]*,*};do
+		source $file
+	done
+fi
