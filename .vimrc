@@ -25,6 +25,8 @@ set list
 set listchars=tab:>-,trail:-
 set nowrapscan
 set mouse=
+set expandtab
+autocmd FileType c set expandtab
 autocmd FileType twiki set expandtab
 autocmd FileType html set ts=2 sw=2 expandtab
 autocmd FileType make set ts=8 sw=8
