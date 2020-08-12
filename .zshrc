@@ -19,6 +19,8 @@ function ssh() {
 
 export PATH=/usr/local/opt/ruby/bin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/ports/Tools/scripts:/usr/local/zvq/sbin:/usr/local/zvq/bin:$HOME/bin:/usr/local/libexec/rancid:$PATH
 export PATH=$PATH:$HOME/adt/sdk/tools:$HOME/adt/sdk/platform-tools
+export PATH=$PATH:/usr/local/lib/ruby/gems/2.6.0/bin/
+export PATH=/usr/local/opt/curl/bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export EDITOR=vim
 export PSQL_EDITOR="vim -c 'set ft=sql'"
@@ -28,6 +30,10 @@ export MAILDIR=$HOME/Maildir
 export MAILCAPS=$HOME/.mailcap
 export PAGER="less -i"
 export MAIL_AGENT="msmtp -t"
+
+#shadowsocks
+export http_proxy='http://127.0.0.1:1087'
+#export https_proxy='https://127.0.0.1:1087'
 
 HISTFILE=$HOME/.zshist
 HISTSIZE=20000
@@ -90,7 +96,9 @@ export GIT_COMMITTER_NAME='Andrew Pantyukhin'
 export GIT_COMMITTER_EMAIL='infofarmer@gmail.com'
 export GIT_DISCOVERY_ACROSS_FILESYSTEM="YES"
 
-export PERL_UNICODE='SDLA'
+export HOMEBREW_NO_BOTTLE_SOURCE_FALLBACK="YES"
+
+#export PERL_UNICODE='SDLA'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LESSCHARSET='utf-8'
