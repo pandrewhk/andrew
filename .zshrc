@@ -17,11 +17,7 @@ function ssh() {
   fi
 }
 
-export PATH=/usr/local/opt/ruby/bin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/ports/Tools/scripts:/usr/local/zvq/sbin:/usr/local/zvq/bin:$HOME/bin:/usr/local/libexec/rancid:$PATH
-export PATH=$PATH:$HOME/adt/sdk/tools:$HOME/adt/sdk/platform-tools
-export PATH=$PATH:/usr/local/lib/ruby/gems/2.6.0/bin/
-export PATH=/usr/local/opt/curl/bin:$PATH
-export NODE_PATH=/usr/local/lib/node_modules
+export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/ports/Tools/scripts:$HOME/bin:$PATH
 export EDITOR=vim
 export PSQL_EDITOR="vim -c 'set ft=sql'"
 export VISUAL=vim
@@ -30,10 +26,6 @@ export MAILDIR=$HOME/Maildir
 export MAILCAPS=$HOME/.mailcap
 export PAGER="less -i"
 export MAIL_AGENT="msmtp -t"
-
-#shadowsocks
-export http_proxy='http://127.0.0.1:1087'
-#export https_proxy='https://127.0.0.1:1087'
 
 HISTFILE=$HOME/.zshist
 HISTSIZE=20000
@@ -96,14 +88,11 @@ export GIT_COMMITTER_NAME='Andrew Pantyukhin'
 export GIT_COMMITTER_EMAIL='infofarmer@gmail.com'
 export GIT_DISCOVERY_ACROSS_FILESYSTEM="YES"
 
-export HOMEBREW_NO_BOTTLE_SOURCE_FALLBACK="YES"
-
-#export PERL_UNICODE='SDLA'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LESSCHARSET='utf-8'
 
-export HOMEBREW_GITHUB_API_TOKEN='ff7561c61c89d97d000292e36c9e7765275190b8'
+#export ALL_PROXY=socks5h://127.0.0.1:1086
 
 if [ -d $HOME/.zsh.d ]; then
 	for file in $HOME/.zsh.d/{.[a-zA-Z0-9]*,*};do
