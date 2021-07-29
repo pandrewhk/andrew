@@ -17,7 +17,7 @@ function ssh() {
   fi
 }
 
-export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/ports/Tools/scripts:$HOME/bin:$PATH
+export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/ports/Tools/scripts:$HOME/bin:$HOME/go/bin:$PATH
 export EDITOR=vim
 export PSQL_EDITOR="vim -c 'set ft=sql'"
 export VISUAL=vim
@@ -99,3 +99,5 @@ if [ -d $HOME/.zsh.d ]; then
 		source $file
 	done
 fi
+
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

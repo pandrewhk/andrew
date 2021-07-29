@@ -1,7 +1,6 @@
 #!/bin/sh
 
 export HOSTNAME=`hostname -s`
-export SCREENRC="$HOME/.screenrc.$HOSTNAME"
 
 if [ "`uname`" != "Darwin" ];then
 SSH_STABLE_SOCK="/tmp/agent.${USER}.${HOSTNAME}.sock"
@@ -15,9 +14,10 @@ pgrep -fl -U $USER ssh-agent || [ "$SSH_AUTH_SOCK" = "$SSH_STABLE_SOCK" ] || {
 }
 fi
 
-if [ -x "`which tmux`" ]&&[ "$TMUX" = "" ]&&[ "$STY" = "" ]&&[ "$TERM" != "cons25" ]&&[ "$PBS_JOBID" = "" ];then
+if [ -x "`which tmux`" ]&&[ "$TMUX" = "" ]&&[ "$STY" = "" ]&&[ "$TERM" != "cons25" ];then
 	tmux has -t ses || tmux new -ds ses
-	exec tmux attach -t ses
+	[ -n "$ITERM_PROFILE" ] && exec tmux -CC attach -t ses
+	[ -z "$ITERM_PROFILE" ] && exec tmux attach -t ses
 elif [ -x "`which reattach-to-user-namespace`" ];then
 	exec reattach-to-user-namespace -l zsh
 elif [ -x "`which zsh`" ];then

@@ -2,12 +2,14 @@
 tmp
 temp
 cache
+.cache
 downloads
 Downloads
 Desktop
 */cache*/
 */*cache/
 .*.swp
+.*sh_history
 .nfs.*
 *.pyc
 *.pyo
@@ -15,4 +17,5 @@ Desktop
 .lesshst
 .psql_history
 .pgpass
+.DS_Store
 */work/*

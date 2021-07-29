@@ -35,5 +35,3 @@ runtime! ftplugin/man.vim
 map z; "jyl:!jdp j
 map z' "jye:!jdp j
 map z" "jyE:!jdp j
-
-execute pathogen#infect()
