@@ -21,3 +21,6 @@
 !:ext	dat
 # option to find more blocks in the file
 #>>(4.l+8)	indirect	x	; 
+
+# LevelDB
+-8	lequad	0xdb4775248b80fb57	LevelDB table data
