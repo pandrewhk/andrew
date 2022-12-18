@@ -1,0 +1,18 @@
+# Bitcoin Block files
+0	lelong		0xD9B4BEF9	Bitcoin Block
+>4	lelong		x		\b, size %u
+>8	lelong&0xE0000000	0x20000000
+>>8	lelong		x		\b, BIP9 0x%x
+>8	lelong&0xE0000000	!0x20000000
+>>8	lelong		x		\b, version 0x%x
+>76	ledate	x	\b, %s UTC
+#VarInt Counter
+>88	byte	<0xfd	\b, txcount %u
+>88	byte	=0xfd
+>>89	leshort	x	\b, txcount %u
+>88	byte	=0xfe
+>>89	lelong	x	\b, txcount %u
+>88	byte	=0xff
+>>89	lequad	x	\b, txcount %llu
+!:ext	dat
+>(4.l+8)	indirect	x	; 
