@@ -18,6 +18,9 @@ function ssh() {
 }
 
 export PATH=/opt/homebrew/sbin:/opt/homebrew/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/ports/Tools/scripts:$HOME/bin:$HOME/go/bin:$PATH
+export LIBRARY_PATH=/opt/homebrew/lib:/usr/local/lib
+export CPATH=/opt/homebrew/include:/usr/local/include
+
 export EDITOR=vim
 export PSQL_EDITOR="vim -c 'set ft=sql'"
 export VISUAL=vim
@@ -101,3 +104,7 @@ if [ -d $HOME/.zsh.d ]; then
 fi
 
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Created by `pipx` on 2022-11-01 08:32:19
+export PATH="$PATH:/Users/andrew/.local/bin"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
