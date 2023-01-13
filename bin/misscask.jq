@@ -1,0 +1,1 @@
+reduce $casks[].casks[] as $r({}; ([$r.artifacts[].app?[]?] + [$r.artifacts[].app?[]?.target?] + [$r.artifacts[].uninstall?[]?.delete?[]?]|map(strings|split("/")|.[-1]|select(endswith(".app")))) as $files | . * { ($files[]):{($r.full_token):$r.installed} } | . * ([inputs]|INDEX(.)|map_values(.={"__ls":.})) ) |  .[]| select(."__ls" and length>1)
