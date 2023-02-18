@@ -26,6 +26,7 @@ brew "cython"
 brew "dart-sdk"
 brew "dhcpdump"
 brew "diffoscope"
+brew "diskus"
 brew "entr"
 brew "fd"
 brew "fdupes"
@@ -75,6 +76,8 @@ brew "tor", restart_service: true
 brew "torsocks"
 brew "tree"
 brew "vbindiff"
+brew "watch"
+brew "watchexec"
 brew "wireshark"
 brew "yarn"
 brew "youtube-dl"
@@ -83,6 +86,7 @@ brew "noahgorstein/tap/jqp"
 brew "noborus/tap/ov"
 brew "wader/tap/fq"
 cask "anytype"
+cask "arc"
 cask "athens"
 cask "bisq"
 cask "bitwarden"
@@ -102,8 +106,8 @@ cask "hex-fiend"
 cask "iina"
 cask "iterm2"
 cask "karabiner-elements"
-cask "keet"
 cask "logseq"
+cask "lulu"
 cask "macfuse"
 cask "microsoft-auto-update"
 cask "microsoft-excel"
@@ -115,9 +119,9 @@ cask "obsidian"
 cask "onedrive"
 cask "onyx"
 cask "orion"
+cask "protonmail-import-export"
 cask "protonvpn"
 cask "qlmarkdown"
-cask "quicksilver"
 cask "sigmaos"
 cask "signal"
 cask "skype"
@@ -129,29 +133,19 @@ cask "syncplay"
 cask "telegram"
 cask "tencent-meeting"
 cask "the-unarchiver"
+cask "tor-browser"
 cask "tunnelblick"
 cask "vlc"
 cask "wechat"
+cask "whatsapp"
 cask "xquartz"
 cask "zalo"
 cask "zoom"
 mas "BeagleIM", id: 1445349494
-mas "Bitwarden", id: 1352778147
-mas "BlueWallet", id: 1376878040
 mas "EasyRes", id: 688211836
 mas "Exporter", id: 1099120373
-mas "Glance", id: 1564688210
 mas "ixnote", id: 1627841284
 mas "LINE", id: 539883307
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Word", id: 462054704
 mas "NetWorker Pro", id: 1163602886
-mas "NordVPN", id: 905953485
-mas "OneDrive", id: 823766827
-mas "Speedify", id: 999025824
-mas "Telegram", id: 747648890
 mas "TestFlight", id: 899247664
-mas "The Unarchiver", id: 425424353
 mas "Userscripts", id: 1463298887
-mas "WeChat", id: 836500024
