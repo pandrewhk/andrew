@@ -24,6 +24,8 @@ brew "caddy", restart_service: true
 brew "cloc"
 brew "rlwrap"
 brew "clojure"
+brew "gmp"
+brew "cmus"
 brew "colordiff"
 brew "cython"
 brew "dart-sdk"
@@ -35,7 +37,6 @@ brew "exif"
 brew "exiftool"
 brew "fd"
 brew "fdupes"
-brew "gmp"
 brew "fheroes2"
 brew "gtk+3"
 brew "freeciv"
@@ -50,6 +51,7 @@ brew "haskell-stack"
 brew "jq"
 brew "ijq"
 brew "imagemagick"
+brew "iperf3"
 brew "ldns"
 brew "leveldb"
 brew "libcython"
@@ -91,6 +93,7 @@ brew "watch"
 brew "watchexec"
 brew "wget"
 brew "wireshark"
+brew "xmp"
 brew "yarn"
 brew "youtube-dl"
 brew "homeport/tap/termshot"
@@ -132,6 +135,7 @@ cask "microsoft-edge"
 cask "microsoft-excel"
 cask "microsoft-powerpoint"
 cask "microsoft-word"
+cask "miniconda"
 cask "motrix"
 cask "nordvpn"
 cask "notion"
@@ -172,4 +176,6 @@ mas "LINE", id: 539883307
 mas "NetWorker Pro", id: 1163602886
 mas "Numbers", id: 409203825
 mas "TestFlight", id: 899247664
-mas "Userscripts", id: 1463298887
+mas "Userscripts-Mac-App", id: 1463298887
+mas "WireGuard", id: 1451685025
+mas "Xcode", id: 497799835
