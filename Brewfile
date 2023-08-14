@@ -101,7 +101,6 @@ brew "noahgorstein/tap/jqp"
 brew "noborus/tap/ov"
 brew "wader/tap/fq"
 cask "android-platform-tools"
-cask "anytype"
 cask "appcleaner"
 cask "arc"
 cask "aria2d"
@@ -144,10 +143,7 @@ cask "onedrive"
 cask "onyx"
 cask "orion"
 cask "protonmail-import-export"
-cask "protonvpn"
-cask "qlmarkdown"
 cask "raycast"
-cask "sigmaos"
 cask "signal"
 cask "skype"
 cask "sloth"
@@ -156,7 +152,6 @@ cask "specter"
 cask "spotify"
 cask "steam"
 cask "telegram"
-cask "tencent-meeting"
 cask "the-unarchiver"
 cask "tor-browser"
 cask "transmission"
@@ -175,6 +170,7 @@ mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "NetWorker Pro", id: 1163602886
 mas "Numbers", id: 409203825
+mas "Remote Desktop", id: 409907375
 mas "TestFlight", id: 899247664
 mas "Userscripts-Mac-App", id: 1463298887
 mas "WireGuard", id: 1451685025
