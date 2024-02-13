@@ -112,9 +112,9 @@ cask "athens"
 cask "bitcoin-core"
 cask "bitwarden"
 cask "bluewallet"
-cask "cleanmymac"
 cask "cloudflare-warp"
 cask "coconutbattery"
+cask "cursor"
 cask "discord"
 cask "docker"
 cask "electrum"
@@ -140,6 +140,7 @@ cask "microsoft-excel"
 cask "microsoft-powerpoint"
 cask "microsoft-teams"
 cask "microsoft-word"
+cask "middleclick"
 cask "miniconda"
 cask "motrix"
 cask "notion"
@@ -168,13 +169,16 @@ cask "xquartz"
 cask "zalo"
 cask "zoom"
 mas "BeagleIM", id: 1445349494
+mas "DEATH STRANDING DIRECTOR'S CUT", id: 6449748961
 mas "EasyRes", id: 688211836
 mas "Exporter", id: 1099120373
+mas "FLYP", id: 1605986264
 mas "ixnote", id: 1627841284
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "NetWorker Pro", id: 1163602886
 mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Remote Desktop", id: 409907375
 mas "TestFlight", id: 899247664
 mas "Userscripts-Mac-App", id: 1463298887
