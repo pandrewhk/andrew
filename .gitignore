@@ -23,7 +23,7 @@
 .zshist
 /.Trash/
 /.bitcoin
-/.config/
+#/.config/
 /.dart/
 /.dropbox/
 /.fheroes2/
@@ -34,7 +34,7 @@
 /.pub-cache/
 /.sparrow/
 /.specter/
-/.ssh/
+#/.ssh/
 /.tor/
 /.vim/
 /.wine/
