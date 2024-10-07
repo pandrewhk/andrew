@@ -1,0 +1,67 @@
+{
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Option+2 to launch/focus Arc",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "2",
+                                    "modifiers": { "mandatory": ["option"] }
+                                },
+                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Arc.app" } } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Option+1 to launch/focus Logseq",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": { "mandatory": ["option"] }
+                                },
+                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Logseq.app" } } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Input source switching shortcuts",
+                        "manipulators": [
+                            { "from": { "modifiers": { "mandatory": ["command"] },
+                                    "simultaneous": [ { "key_code": "r" }, { "key_code": "spacebar" } ] },
+                                "to": [{ "select_input_source": { "language": "ru" } }],
+                                "type": "basic" },
+                            { "from": { "modifiers": { "mandatory": ["command"] },
+                                    "simultaneous": [ { "key_code": "e" }, { "key_code": "spacebar" } ] },
+                                "to": [{ "select_input_source": { "language": "en" } }],
+                                "type": "basic" },
+                            { "from": { "modifiers": { "mandatory": ["command"] },
+                                    "simultaneous": [ { "key_code": "j" }, { "key_code": "spacebar" } ] },
+                                "to": [{ "select_input_source": { "language": "ja" } }],
+                                "type": "basic" },
+                            { "from": { "modifiers": { "mandatory": ["command"] },
+                                    "simultaneous": [ { "key_code": "c" }, { "key_code": "spacebar" } ] },
+                                "to": [{ "select_input_source": { "language": "zh" } }],
+                                "type": "basic" },
+                            { "from": { "modifiers": { "mandatory": ["command"] },
+                                    "simultaneous": [ { "key_code": "v" }, { "key_code": "spacebar" } ] },
+                                "to": [{ "select_input_source": { "language": "vi" } }],
+                                "type": "basic" }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "keyboard_type_v2": "ansi"
+            }
+        }
+    ]
+}
