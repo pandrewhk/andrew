@@ -41,6 +41,8 @@ brew "brew-gem"
 brew "bsdiff"
 # Powerful, enterprise-ready, open source web server with automatic HTTPS
 brew "caddy", restart_service: :changed
+# GNU multiple precision arithmetic library
+brew "gmp"
 # Statistics utility to count lines of code
 brew "cloc"
 # Color-highlighted diff(1) output
@@ -78,15 +80,13 @@ brew "fheroes2"
 # Generic library support script
 brew "libtool"
 # Command-line outline and bitmap font editor/converter
-brew "fontforge", link: false
+brew "fontforge"
 # Free and Open Source empire-building strategy game
 brew "freeciv"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
-# GNU multiple precision arithmetic library
-brew "gmp"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Little fast LoC counter
@@ -147,6 +147,8 @@ brew "ncspot"
 brew "nethack"
 # Port scanning utility for large networks
 brew "nmap"
+# Open source computer vision library
+brew "opencv"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # Feature-rich terminal-based text viewer
@@ -175,8 +177,6 @@ brew "qemu"
 brew "qpdf"
 # QR Code generation
 brew "qrencode"
-# Reverse engineering framework
-brew "radare2"
 # Rsync for cloud storage
 brew "rclone"
 # Perl-powered file rename script with many helpful built-ins
@@ -207,6 +207,8 @@ brew "tor", restart_service: :changed
 brew "torsocks"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Open-source Android/Desktop remake of Civ V
+brew "unciv"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Visual Binary Diff
@@ -251,10 +253,12 @@ cask "deltachat"
 cask "dosbox"
 # APL-based development environment
 cask "dyalog"
-# Utility to finds and fix problems on computer systems
+# Utility to find and fix problems on computer systems
 cask "etrecheckpro"
 # Web browser
 cask "firefox"
+# AI teammates that work across your apps and tools
+cask "grok-bot"
 # Chromium-based web browser
 cask "helium-browser"
 # Medical image viewer
@@ -283,6 +287,8 @@ cask "musescore"
 cask "obsidian"
 # Media player
 cask "optimus-player"
+# Free and open-source page layout program
+cask "scribus"
 # Instant messaging application focusing on security
 cask "signal"
 # Open-source media center
@@ -319,9 +325,9 @@ mas "Exporter", id: 1099120373
 mas "GarageBand", id: 682658836
 mas "hide.me", id: 953040671
 mas "HolaVPN2", id: 1553473179
-mas "Keynote", id: 409183694
+mas "Kagi for Safari", id: 1622835804
+mas "Keynote", id: 361285480
 mas "LINE", id: 539883307
-mas "LookUp", id: 872564448
 mas "modizer", id: 393964792
 mas "NetWorker Pro", id: 1163602886
 mas "Numbers", id: 361304891
